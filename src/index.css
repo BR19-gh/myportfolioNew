@@ -1,0 +1,18 @@
+.content-container {
+  margin-top: 15%;
+}
+
+.NavLink {
+  transition: all 0.3s ease;
+}
+
+.NavLink.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.dropdown-menu[data-bs-popper] {
+  position: absolute !important;
+  width: 110px !important;
+  left: -110px !important;
+}
