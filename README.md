@@ -9,19 +9,25 @@ This web application allows employees to participate in polls, create new polls,
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/employee-polls-web-app.git
+   git clone https://github.com/BR19-gh/employeePolls-Udacity.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd employee-polls-web-app
+   cd employeePolls-Udacity
    ```
 
 3. Install dependencies:
 
    ```bash
    npm install
+   ```
+
+## Testing (Jest):
+To test the app usung Jest, type:
+   ```bash
+   npm test
    ```
 
 ## Usage
@@ -32,7 +38,7 @@ This web application allows employees to participate in polls, create new polls,
    npm run dev
    ```
 
-2. Open your browser and visit [http://localhost:3000](http://localhost:3000) to use the Employee Polls Web App.
+2. Open your browser and visit [http://localhost:5173](http://localhost:5173) to use the Employee Polls Web App.
 
 ## Features
 
