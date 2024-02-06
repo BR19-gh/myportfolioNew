@@ -25,7 +25,7 @@ This web application allows employees to participate in polls, create new polls,
    ```
 
 ## Testing (Jest):
-To test the app usung Jest, type:
+To test the app using Jest, type:
    ```bash
    npm test
    ```
