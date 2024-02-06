@@ -1,7 +1,3 @@
-Sure, based on the provided information, here's a simple README for your project:
-
----
-
 # Employee Polls Web App
 
 ## Overview
@@ -65,7 +61,3 @@ If you'd like to contribute to this project, please follow these steps:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this README based on your project's specific details and requirements.
