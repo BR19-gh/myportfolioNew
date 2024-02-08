@@ -1,18 +1,22 @@
 /* eslint-disable react/prop-types */
 import { connect } from "react-redux";
 import Question from "./Question.jsx";
-import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 
 const Dashboard = (props) => {
   return (
     <Container>
-      <Card className="text-center m-1">
-        <Card.Header as="h3">New Questions</Card.Header>
-        {props.unansweredQuestionId.length !== 0 ? (
-          <Card.Body>
+      <Tabs
+        defaultActiveKey="newQuestions"
+        id="uncontrolled-tab-example"
+        className="mb-3"
+      >
+        <Tab eventKey="newQuestions" title="New Questions">
+          {props.unansweredQuestionId.length !== 0 ? (
             <Row md={3}>
               {props.unansweredQuestionId.map((id) => (
                 <Col className="mb-3" key={id}>
@@ -20,17 +24,12 @@ const Dashboard = (props) => {
                 </Col>
               ))}
             </Row>
-          </Card.Body>
-        ) : (
-          <h5>No new polls yet...</h5>
-        )}
-      </Card>
-      <hr></hr>
-
-      <Card className="text-center m-1 mb-4">
-        <Card.Header as="h3">Done</Card.Header>
-        {props.answeredQuestionIdlength !== 0 ? (
-          <Card.Body>
+          ) : (
+            <h5>No new polls yet...</h5>
+          )}
+        </Tab>
+        <Tab eventKey="done" title="Done">
+          {props.answeredQuestionIdlength !== 0 ? (
             <Row md={3}>
               {props.answeredQuestionId.map((id) => (
                 <Col className="mb-3" key={id}>
@@ -38,11 +37,11 @@ const Dashboard = (props) => {
                 </Col>
               ))}
             </Row>
-          </Card.Body>
-        ) : (
-          <h5>No polls answered yet...</h5>
-        )}
-      </Card>
+          ) : (
+            <h5>No polls answered yet...</h5>
+          )}
+        </Tab>
+      </Tabs>
     </Container>
   );
 };

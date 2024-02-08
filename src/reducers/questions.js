@@ -31,6 +31,8 @@ export default function questions(state = {}, action) {
       };
 
     case ADD_QUESTION:
+      console.log("Question added to user: ", question);
+
       return {
         ...state,
         [question.id]: question,

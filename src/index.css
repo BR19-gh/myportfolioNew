@@ -16,3 +16,8 @@
   width: 110px !important;
   left: -110px !important;
 }
+
+button#uncontrolled-tab-example-tab-newQuestions,
+button#uncontrolled-tab-example-tab-done {
+  font-size: 1.7rem;
+}

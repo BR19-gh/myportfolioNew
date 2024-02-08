@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+import NotFound from "./NotFound";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import { formatDate } from "../helpers";
@@ -10,6 +11,11 @@ import { handleAnswerQuestion } from "../actions/questions";
 
 const QuestionPage = (props) => {
   const { id } = useParams();
+
+  if (props.questions[id] === undefined) {
+    return <NotFound />;
+  }
+
   const question = props.questions[id];
 
   const isAnswered = Object.keys(

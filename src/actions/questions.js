@@ -1,6 +1,6 @@
 import { _saveQuestionAnswer, _saveQuestion } from "../../_DATA";
 import { showLoading, hideLoading } from "react-redux-loading-bar";
-import { addAnswer } from "./users";
+import { addAnswer, addQuestionToUser } from "./users";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const ANSWER_QUESTION = "ANSWER_QUESTION";
@@ -18,7 +18,12 @@ export function handleAddQuestion(question) {
     dispatch(showLoading());
 
     return _saveQuestion(question)
-      .then((question) => dispatch(addQuestion(question)))
+      .then((question) => {
+        dispatch(addQuestion(question));
+        dispatch(
+          addQuestionToUser({ qid: question.id, authedUser: question.author })
+        );
+      })
       .then(() => dispatch(hideLoading()));
   };
 }
