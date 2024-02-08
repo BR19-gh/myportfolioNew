@@ -85,7 +85,6 @@ const Navigation = (props) => {
               cursor: "pointer",
             }}
             onClick={() => {
-              localStorage.removeItem("authedUser");
               props.dispatch(setAuthedUser(""));
               navigate("/login");
             }}

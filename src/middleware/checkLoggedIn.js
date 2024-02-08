@@ -2,8 +2,7 @@
 const checkLoggedIn = (store) => (next) => (action) => {
   if (
     store.getState().authedUser === "" &&
-    window.location.pathname !== "/login" &&
-    window.location.pathname !== "/signIn"
+    window.location.pathname !== "/login"
   ) {
     if (localStorage.getItem("prevPath") === null) {
       localStorage.setItem("prevPath", window.location.pathname);
