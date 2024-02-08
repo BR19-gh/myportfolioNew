@@ -80,6 +80,8 @@ To test the app using Jest, type:
 ### Question Page after selecting
 ![Question Page after selecting](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/after_selecting_question_page.png)
 
+<hr></hr>
+
 ### Login Page
 ![Login Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/login_page.png)
 
