@@ -56,22 +56,28 @@ To test the app using Jest, type:
 - `public`: Public assets
 
 ## Sample Screenshots
+
+### Home Page
 ![Home Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/home_page.png)
 
 <hr></hr>
 
+### Leaderboard Page
 ![Leaderboard Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/leaderboard_page.png)
 
 <hr></hr>
 
+### New Question Page
 ![New Question Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/new_question_page.png)
 
 <hr></hr>
 
+### Question Page
 ![Question Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/question_page.png)
 
 <hr></hr>
 
+### Question Page after selecting
 ![Question Page after selecting](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/after_selecting_question_page.png)
 
 
