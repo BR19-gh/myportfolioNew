@@ -13,6 +13,7 @@ const NewQuestion = (props) => {
   const secondOptionRef = useRef("");
 
   const handleSubmit = () => {
+    localStorage.setItem("handleAnswer", true);
     if (
       firstOptionRef.current.value === "" ||
       secondOptionRef.current.value === ""

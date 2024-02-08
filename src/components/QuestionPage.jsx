@@ -18,9 +18,9 @@ const QuestionPage = (props) => {
 
   const question = props.questions[id];
 
-  const isAnswered = Object.keys(
-    props.users[props.authedUser].answers
-  ).includes(question.id);
+  const isAnswered = props.authedUser
+    ? Object.keys(props.users[props.authedUser].answers).includes(question.id)
+    : undefined;
 
   const isAnswerExist = () => {
     if (isAnswered) {
@@ -65,6 +65,11 @@ const QuestionPage = (props) => {
   };
 
   const handleAnswer = (option) => {
+    localStorage.setItem("handleAnswer", true);
+    if (props.authedUser === "") {
+      alert("Login before answering the poll");
+      return;
+    }
     props.dispatch(
       handleAnswerQuestion({
         authedUser: props.authedUser,
@@ -73,7 +78,6 @@ const QuestionPage = (props) => {
       })
     );
   };
-
   return (
     <Card className="text-center">
       <Card.Header>
@@ -102,7 +106,7 @@ const QuestionPage = (props) => {
               </Card.Text>
               <Button
                 onClick={() => handleAnswer("optionOne")}
-                disabled={isAnswered}
+                disabled={!isAnswered ? false : true}
                 variant={
                   isAnswerExist() === "optionOne"
                     ? "success"
@@ -123,7 +127,7 @@ const QuestionPage = (props) => {
               </Card.Text>
               <Button
                 onClick={() => handleAnswer("optionTwo")}
-                disabled={isAnswered}
+                disabled={!isAnswered ? false : true}
                 variant={
                   isAnswerExist() === "optionTwo"
                     ? "success"

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -14,17 +15,20 @@ function Login(props) {
   const handleLogin = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
+
     if (username === "" || password === "") {
       alert("Please fill in all fields");
     } else if (Object.keys(props.users).includes(username)) {
       if (props.users[username].password === password) {
+        localStorage.setItem("authedUser", username);
         props.dispatch(setAuthedUser(username));
+
         if (localStorage.getItem("prevPath") !== null) {
-          window.location.replace(
-            location.origin + localStorage.getItem("prevPath")
-          );
+          // Use history.push for React Router navigation
+          navigate(localStorage.getItem("prevPath"));
           localStorage.removeItem("prevPath");
         } else {
+          // Use history.push for React Router navigation
           navigate("/");
         }
       } else {
@@ -33,12 +37,15 @@ function Login(props) {
     } else {
       alert("Incorrect password or username");
     }
+
+    // Clear input fields
     usernameRef.current.value = "";
     passwordRef.current.value = "";
   };
   return (
     <Form>
-      {props.authedUser !== undefined ? (
+      {props.authedUser !== undefined ||
+      localStorage.getItem("authedUser") !== null ? (
         <div>
           <h2>You are already logged in.</h2>
           <p>If you want to log out, please click logout above.</p>

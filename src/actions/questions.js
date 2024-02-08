@@ -24,7 +24,10 @@ export function handleAddQuestion(question) {
           addQuestionToUser({ qid: question.id, authedUser: question.author })
         );
       })
-      .then(() => dispatch(hideLoading()));
+      .then(() => {
+        dispatch(hideLoading());
+        localStorage.removeItem("handleAnswer");
+      });
   };
 }
 
@@ -52,7 +55,10 @@ export function handleAnswerQuestion(info) {
         dispatch(answerQuestion(info));
         dispatch(addAnswer(info));
       })
-      .then(() => dispatch(hideLoading()))
+      .then(() => {
+        dispatch(hideLoading());
+        localStorage.removeItem("handleAnswer");
+      })
       .catch((e) => {
         console.warn("Error in handleAnswerQuestion: ", e);
         alert("There was an error answering the question. Try again.");

@@ -1,7 +1,7 @@
 let users = {
   br19: {
     id: "br19",
-    password: "password123",
+    password: "111",
     name: "Ibrahim Alkhowaiter",
     avatarURL: "../../public/avatar/avatar.png",
     answers: {
