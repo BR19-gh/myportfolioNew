@@ -18,7 +18,6 @@ function Login(props) {
       alert("Please fill in all fields");
     } else if (Object.keys(props.users).includes(username)) {
       if (props.users[username].password === password) {
-        localStorage.setItem("authedUser", username);
         props.dispatch(setAuthedUser(username));
         if (localStorage.getItem("prevPath") !== null) {
           window.location.replace(
@@ -39,8 +38,7 @@ function Login(props) {
   };
   return (
     <Form>
-      {props.authedUser !== undefined ||
-      localStorage.getItem("authedUser") !== null ? (
+      {props.authedUser !== undefined ? (
         <div>
           <h2>You are already logged in.</h2>
           <p>If you want to log out, please click logout above.</p>
