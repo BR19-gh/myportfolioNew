@@ -55,6 +55,29 @@ To test the app using Jest, type:
 - `src/store`: Redux store configuration
 - `public`: Public assets
 
+## Sample Screenshots
+![Home Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/home_page.png)
+
+<hr></hr>
+
+![Leaderboard Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/leaderboard_page.png)
+
+<hr></hr>
+
+![New Question Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/new_question_page.png)
+
+<hr></hr>
+
+![Question Page](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/question_page.png)
+
+<hr></hr>
+
+![Question Page after selecting](https://github.com/BR19-gh/employeePolls-Udacity/blob/master/imgs%20for%20Github/after_selecting_question_page.png)
+
+
+
+
+
 ## Contributing
 
 If you'd like to contribute to this project, please follow these steps:
