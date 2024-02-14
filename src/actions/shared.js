@@ -1,25 +1,23 @@
-import { _getUsers, _getQuestions } from "../../_DATA";
-import { receiveUsers } from "./users";
-import { receiveQuestions } from "./questions";
-import { setAuthedUser } from "./authedUser";
+import { _getProjects } from "../../_DATA";
+import { receiveProjects } from "./projects";
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 
-const AUTHED_ID = localStorage.getItem("authedUser")
-  ? localStorage.getItem("authedUser")
-  : "";
+const myPrimaryColorAction = {
+  type: "CHANGE_PRIMARY_COLOR",
+  payload: "#5a5aa1",
+};
 
 export function handleInitialData() {
   return (dispatch) => {
     dispatch(showLoading());
-    _getUsers()
-      .then((users) => {
-        _getQuestions().then((questions) => {
-          dispatch(receiveUsers(users));
-          dispatch(receiveQuestions(questions));
-          dispatch(setAuthedUser(AUTHED_ID));
-          dispatch(hideLoading());
-        });
+
+    _getProjects()
+      .then((projects) => {
+        dispatch(receiveProjects(projects));
+        dispatch(myPrimaryColorAction);
+        dispatch(hideLoading());
       })
+
       .catch((error) => {
         alert(error);
       });

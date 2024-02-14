@@ -4,97 +4,70 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setAuthedUser } from "../actions/authedUser";
 
-const Navigation = (props) => {
+const PAGES = [
+  {
+    path: "",
+    title: "Home",
+  },
+  {
+    path: "aboutme",
+    title: "About Me",
+  },
+  {
+    path: "projects",
+    title: "Projects",
+  },
+  {
+    path: "resume",
+    title: "Resume",
+  },
+];
+
+const Navigation = ({ expanded, setExpanded, myPrimaryColor }) => {
   const navigate = useNavigate();
   const isActive = (path) => window.location.pathname === path;
 
   return (
-    <Navbar className="container" fixed="top" bg="dark" variant="dark">
+    <Navbar
+      expanded={expanded}
+      fixed="top"
+      expand="lg"
+      style={{
+        backdropFilter: "blur(30px) contrast(100%)",
+        WebkitBackdropFilter: "blur(30px) contrast(100%)",
+        width: "100%",
+        paddingLeft: "50px",
+        paddingRight: "50px",
+      }}
+    >
       <Navbar.Brand
         style={{
           cursor: "pointer",
         }}
         onClick={() => navigate("/")}
       >
-        Employee Polls
+        <Image src="../../public/icon.png" style={{ height: "40px" }} />
       </Navbar.Brand>
-      <Nav className="me-auto">
-        <Nav.Link
-          className={isActive("/") ? "active" : ""}
-          onClick={() => navigate("/")}
-        >
-          Home
-        </Nav.Link>
-        <Nav.Link
-          className={isActive("/leaderboard") ? "active" : ""}
-          onClick={() => navigate("/leaderboard")}
-        >
-          Leaderboard
-        </Nav.Link>
-        {props.authedUser ? (
-          <Nav.Link
-            className={isActive("/new") ? "active" : ""}
-            onClick={() => navigate("/add")}
-          >
-            New
-          </Nav.Link>
-        ) : null}
-      </Nav>
-      <Navbar.Collapse className="d-flex justify-content-end">
-        <Image
-          style={{
-            width: "50px",
-            height: "50px",
-            marginRight: "10px",
-          }}
-          src={
-            props.authedUser
-              ? props.users[props.authedUser]?.avatarURL
-              : "../../public/avatar/example.png"
-          }
-          alt="avatar"
-          roundedCircle
-        />
-        <Navbar.Text data-testid="username-nav" style={{ marginLeft: "-10px" }}>
-          {props.authedUser ? (
-            "@" + props.authedUser
-          ) : (
-            <Navbar.Text
-              style={{
-                color: "white",
-                marginLeft: "10px",
-                marginRight: "10px",
-                cursor: "pointer",
-              }}
+      <Navbar.Toggle
+        onClick={() => setExpanded(expanded ? false : "expanded")}
+        aria-controls="navbarScroll"
+      />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          {PAGES.map((page) => (
+            <Nav.Link
+              key={page.path}
+              className={isActive(page.path) ? "active" : ""}
               onClick={() => {
-                navigate("/login");
+                setExpanded(false);
+                navigate(page.path);
               }}
             >
-              Login
-            </Navbar.Text>
-          )}
-        </Navbar.Text>
-        {props.authedUser ? (
-          <Navbar.Text
-            style={{
-              color: "white",
-              marginLeft: "10px",
-              marginRight: "10px",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              localStorage.removeItem("authedUser");
-              props.dispatch(setAuthedUser(""));
-              navigate("/login");
-            }}
-          >
-            Logout
-          </Navbar.Text>
-        ) : (
-          ""
-        )}
+              {page.title}
+            </Nav.Link>
+          ))}
+        </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
