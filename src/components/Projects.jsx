@@ -1,42 +1,38 @@
 /* eslint-disable react/prop-types */
 import { connect } from "react-redux";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
-import { formatDate } from "../helpers";
-import { useNavigate } from "react-router-dom";
-
-const Project = (props) => {
-  const navigate = useNavigate();
-
-  if (props.project === null) {
-    return <p>This project does not exist</p>;
-  }
-
-  const { author, timestamp } = props.project;
-
+const Projects = ({ projects }) => {
   return (
-    <Card className="text-center h-100 w-100">
-      <Card.Body>
-        <Card.Title>{author === props.authedUser ? "You" : author}</Card.Title>
-        <Button
-          onClick={() => navigate(`/project/${props.id}`)}
-          variant="primary"
-        >
-          Show
-        </Button>
-      </Card.Body>
-      <Card.Footer className="text-muted">{formatDate(timestamp)}</Card.Footer>
-    </Card>
+    <Container className="d-flex flex-lg-wrap">
+      {Object.keys(projects).map((id) => (
+        <Card key={id} style={{ width: "18rem", margin: "10px" }}>
+          <Card.Img
+            // style={{
+            //   width: "200px",
+            //   height: "100px",
+            // }}
+            variant="top"
+            src={projects[id].githubImg}
+            alt={projects[id].githubURL}
+          />
+          <Card.Body>
+            <Card.Title>{projects[id].title}</Card.Title>
+            <Card.Text>"working on it..."</Card.Text>
+            <Button variant="primary">Go to Project</Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </Container>
   );
 };
 
-const mapStateToProps = ({ projects }, { id }) => {
-  const project = projects[id];
-
+const mapStateToProps = ({ projects }) => {
   return {
-    project: project ? project : null,
+    projects,
   };
 };
 
-export default connect(mapStateToProps)(Project);
+export default connect(mapStateToProps)(Projects);

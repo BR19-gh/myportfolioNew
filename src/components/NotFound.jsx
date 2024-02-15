@@ -3,6 +3,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import err404Img from "../../public/img/404errDark.png";
 
 const NotFound = ({
   myPrimaryColor,
@@ -46,7 +47,7 @@ const NotFound = ({
           marginBottom: fontSize === "lg" ? "-130px" : "-80px",
           height: fontSize === "lg" ? "700px" : "300px",
         }}
-        src="../../public/img/404errDark.png"
+        src={err404Img}
         alt="404 Error"
       />
       <div className="text-center">

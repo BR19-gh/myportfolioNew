@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
-import ProjectPage from "./ProjectPage";
 import Projects from "./Projects";
 import Nav from "./Nav";
 import { Routes, Route } from "react-router-dom";
@@ -43,7 +42,7 @@ const App = (props) => {
               }
             />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/project/:id" element={<ProjectPage />} />
+
             <Route
               path="/aboutme"
               element={
