@@ -28,7 +28,10 @@ const Navigation = ({ expanded, setExpanded }) => {
         }}
         onClick={() => navigate("/")}
       >
-        <Image src="../../public/icon.png" style={{ height: "40px" }} />
+        <Image
+          src="../../public/backgroundDark.jpg"
+          style={{ height: "40px" }}
+        />
       </Navbar.Brand>
       <Navbar.Toggle
         onClick={() => setExpanded(expanded ? false : "expanded")}
