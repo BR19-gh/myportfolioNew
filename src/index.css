@@ -1,6 +1,8 @@
 :root {
   --myprimary: #5a5aa1;
   --myprimaryhover: #46467c;
+  --mysecondary: #424294;
+  --mysecondaryhover: #3a3a60;
 }
 * {
   user-select: none;
@@ -20,6 +22,7 @@ body {
 
 .NavLink.active {
   font-weight: bold;
+  color: var(--myprimary);
   text-decoration: underline;
 }
 
@@ -51,6 +54,12 @@ body {
 }
 #resume-btn:hover {
   background-color: var(--myprimaryhover);
+}
+#projects-btn {
+  background-color: var(--mysecondary);
+}
+#projects-btn:hover {
+  background-color: var(--mysecondaryhover);
 }
 
 .avatar {

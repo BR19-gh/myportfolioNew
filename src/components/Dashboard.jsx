@@ -8,6 +8,7 @@ import Typewriter from "typewriter-effect";
 import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 import { Tilt } from "react-tilt";
+import { useNavigate } from "react-router-dom";
 
 const JobTitle = ({ myPrimaryColor, fontSize }) => {
   return (
@@ -123,10 +124,11 @@ const AccountsSection = () => (
 );
 
 const AboutMeSection = ({ myPrimaryColor, fontSize }) => {
+  const navigate = useNavigate();
   return (
     <Col
       style={{
-        marginTop: fontSize === "lg" ? "0%" : "15%",
+        marginTop: fontSize === "lg" ? "0%" : "10%",
         display: "flex",
         height: "70%",
         flexDirection: "column",
@@ -155,8 +157,11 @@ const AboutMeSection = ({ myPrimaryColor, fontSize }) => {
           width: "155px",
         }}
         size="lg"
+        onClick={() => {
+          navigate("/aboutme");
+        }}
       >
-        About Me <i className="fas fa-arrow-circle-down"></i>
+        About Me <i className="fas fa-arrow-circle-right"></i>
       </Button>
       <AccountsSection />
     </Col>

@@ -5,26 +5,7 @@ import Image from "react-bootstrap/Image";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const PAGES = [
-  {
-    path: "",
-    title: "Home",
-  },
-  {
-    path: "aboutme",
-    title: "About Me",
-  },
-  {
-    path: "projects",
-    title: "Projects",
-  },
-  {
-    path: "resume",
-    title: "Resume",
-  },
-];
-
-const Navigation = ({ expanded, setExpanded, myPrimaryColor }) => {
+const Navigation = ({ expanded, setExpanded }) => {
   const navigate = useNavigate();
   const isActive = (path) => window.location.pathname === path;
 
@@ -55,18 +36,42 @@ const Navigation = ({ expanded, setExpanded, myPrimaryColor }) => {
       />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          {PAGES.map((page) => (
-            <Nav.Link
-              key={page.path}
-              className={isActive(page.path) ? "active" : ""}
-              onClick={() => {
-                setExpanded(false);
-                navigate(page.path);
-              }}
-            >
-              {page.title}
-            </Nav.Link>
-          ))}
+          <Nav.Link
+            className={isActive("/") ? "active" : ""}
+            onClick={() => {
+              setExpanded(false);
+              navigate("/");
+            }}
+          >
+            Home
+          </Nav.Link>
+          <Nav.Link
+            className={isActive("/aboutme") ? "active" : ""}
+            onClick={() => {
+              setExpanded(false);
+              navigate("/aboutme");
+            }}
+          >
+            About Me
+          </Nav.Link>
+          <Nav.Link
+            className={isActive("/projects") ? "active" : ""}
+            onClick={() => {
+              setExpanded(false);
+              navigate("/projects");
+            }}
+          >
+            Projects
+          </Nav.Link>
+          <Nav.Link
+            className={isActive("/resume") ? "active" : ""}
+            onClick={() => {
+              setExpanded(false);
+              navigate("/resume");
+            }}
+          >
+            Resume
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
