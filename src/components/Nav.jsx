@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import icon from "../../public/icon.png";
 
 const Navigation = ({ expanded, setExpanded }) => {
   const navigate = useNavigate();
@@ -28,10 +29,7 @@ const Navigation = ({ expanded, setExpanded }) => {
         }}
         onClick={() => navigate("/")}
       >
-        <Image
-          src="../../public/backgroundDark.jpg"
-          style={{ height: "40px" }}
-        />
+        <Image src={icon} style={{ height: "40px" }} />
       </Navbar.Brand>
       <Navbar.Toggle
         onClick={() => setExpanded(expanded ? false : "expanded")}

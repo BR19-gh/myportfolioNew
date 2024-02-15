@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 import { Tilt } from "react-tilt";
 import { useNavigate } from "react-router-dom";
+import sticker from "../../public/avatar/sticker.png";
 
 const JobTitle = ({ myPrimaryColor, fontSize }) => {
   return (
@@ -203,7 +204,7 @@ const ImageSection = ({ imageWidth }) => {
             width: "100%",
             borderRadius: "40%",
           }}
-          src="../../public/avatar/sticker.png"
+          src={sticker}
           alt="avatar"
         />
       </Tilt>
