@@ -41,7 +41,18 @@ const App = (props) => {
                 />
               }
             />
-            <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/projects"
+              element={
+                <Projects
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
 
             <Route
               path="/aboutme"

@@ -14,13 +14,13 @@ import sticker from "../../public/avatar/sticker.png";
 const JobTitle = ({ myPrimaryColor, fontSize }) => {
   return (
     <div className="mb-3" style={{ display: "flex" }}>
-      <h4 style={{ fontSize: fontSize === "lg" ? "30px" : "16px" }}>
+      <h4 style={{ fontSize: fontSize === "lg" ? "25px" : "16px" }}>
         and I'm a&nbsp;
       </h4>
       <h4
         id="typewriter"
         style={{
-          fontSize: fontSize === "lg" ? "30px" : "16px",
+          fontSize: fontSize === "lg" ? "25px" : "16px",
           color: myPrimaryColor,
           fontWeight: "bold",
           letterSpacing: "2px",
@@ -88,43 +88,20 @@ const Account = ({ name, icon, link }) => (
   </div>
 );
 
-const ACCOUNTS = [
-  {
-    name: "github",
-    icon: "fab fa-github",
-    link: "https://github.com/BR19-gh",
-  },
-  {
-    name: "linkedin",
-    icon: "fab fa-linkedin",
-    link: "https://www.linkedin.com/in/ibrahim-alkhowaiter-430b24203/",
-  },
-  {
-    name: "email",
-    icon: "fas fa-envelope",
-    link: "mailto: Ibrahim-abdalaziz@hotmail.com",
-  },
-  {
-    name: "whatsapp",
-    icon: "fab fa-whatsapp",
-    link: "https://wa.me/966500885115",
-  },
-];
-
-const AccountsSection = () => (
+const AccountsSection = ({ accounts }) => (
   <div className="circle-container">
-    {ACCOUNTS.map((account) => (
+    {Object.keys(accounts).map((account) => (
       <Account
-        key={account.name}
-        name={account.name}
-        icon={account.icon}
-        link={account.link}
+        key={accounts[account].name}
+        name={accounts[account].name}
+        icon={accounts[account].icon}
+        link={accounts[account].link}
       />
     ))}
   </div>
 );
 
-const AboutMeSection = ({ myPrimaryColor, fontSize }) => {
+const AboutMeSection = ({ myPrimaryColor, fontSize, accounts }) => {
   const navigate = useNavigate();
   return (
     <Col
@@ -137,13 +114,13 @@ const AboutMeSection = ({ myPrimaryColor, fontSize }) => {
       }}
     >
       <h1
-        style={{ fontSize: fontSize === "lg" ? "60px" : "40px" }}
+        style={{ fontSize: fontSize === "lg" ? "55px" : "40px" }}
         className="mb-3"
       >
         Hello, World!
       </h1>
       <h1
-        style={{ fontSize: fontSize === "lg" ? "40px" : "25px" }}
+        style={{ fontSize: fontSize === "lg" ? "35px" : "25px" }}
         className="mb-3"
       >
         I'm Ibrahim Alkhowaiter
@@ -164,7 +141,7 @@ const AboutMeSection = ({ myPrimaryColor, fontSize }) => {
       >
         About Me <i className="fas fa-arrow-circle-right"></i>
       </Button>
-      <AccountsSection />
+      <AccountsSection accounts={accounts} />
     </Col>
   );
 };
@@ -219,12 +196,13 @@ const Dashboard = ({
   flexDir,
   fontSize,
   setExpanded,
+  accounts,
 }) => {
   // const [pageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1200) {
+      if (window.innerWidth < 1180) {
         setFlexDir("column");
       } else {
         setFlexDir("row");
@@ -272,6 +250,7 @@ const Dashboard = ({
         }}
       >
         <AboutMeSection
+          accounts={accounts}
           myPrimaryColor={myPrimaryColor}
           flexDir={flexDir}
           fontSize={fontSize}
@@ -284,9 +263,9 @@ const Dashboard = ({
   );
 };
 
-const mapStateToProps = ({ myPrimaryColor, loadingBar }) => ({
+const mapStateToProps = ({ myPrimaryColor, accounts }) => ({
   myPrimaryColor: myPrimaryColor.color,
-  loadingBar: loadingBar.default,
+  accounts,
 });
 
 export default connect(mapStateToProps)(Dashboard);

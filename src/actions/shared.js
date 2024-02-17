@@ -1,5 +1,6 @@
-import { _getProjects } from "../../_DATA";
+import { _getProjects, _getAccounts } from "../../_DATA";
 import { receiveProjects } from "./projects";
+import { receiveAccounts } from "./accounts";
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 
 const myPrimaryColorAction = {
@@ -13,9 +14,12 @@ export function handleInitialData() {
 
     _getProjects()
       .then((projects) => {
-        dispatch(receiveProjects(projects));
-        dispatch(myPrimaryColorAction);
-        dispatch(hideLoading());
+        _getAccounts().then((accounts) => {
+          dispatch(receiveProjects(projects));
+          dispatch(receiveAccounts(accounts));
+          dispatch(myPrimaryColorAction);
+          dispatch(hideLoading());
+        });
       })
 
       .catch((error) => {

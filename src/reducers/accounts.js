@@ -1,17 +1,18 @@
 /* eslint-disable no-empty */
-import { RECEIVE_PROJECTS } from "../actions/projects";
+import { RECEIVE_ACCOUNTS } from "../actions/accounts.js";
 
-export default function projects(state = {}, action) {
+export default function accounts(state = {}, action) {
   //   const { question } = action;
   //   const { qid } = action ? action : { qid: "" };
   //   const { authedUser } = action ? action : { authedUser: "" };
   //   const { answer } = action ? action : { answer: {} };
 
   switch (action.type) {
-    case RECEIVE_PROJECTS:
+    case RECEIVE_ACCOUNTS:
+      console.log(action.accounts);
       return {
         ...state,
-        ...action.projects,
+        ...action.accounts,
       };
 
     default:

@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import projects from "./projects";
+import accounts from "./accounts";
 import { loadingBarReducer } from "react-redux-loading-bar";
 
 function myPrimaryColor(state = {}, action) {
@@ -19,6 +20,7 @@ function myPrimaryColor(state = {}, action) {
 
 export default combineReducers({
   projects,
+  accounts,
   myPrimaryColor,
   loadingBar: loadingBarReducer,
 });
