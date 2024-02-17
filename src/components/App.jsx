@@ -10,6 +10,7 @@ import Container from "react-bootstrap/Container";
 import NotFound from "./NotFound";
 import LoadingBar from "react-redux-loading-bar";
 import AboutMe from "./AboutMe";
+import Stats from "./Stats";
 
 const App = (props) => {
   const [flexDir, setFlexDir] = useState("row");
@@ -58,6 +59,18 @@ const App = (props) => {
               path="/aboutme"
               element={
                 <AboutMe
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
+            <Route
+              path="/stats"
+              element={
+                <Stats
                   setExpanded={setExpanded}
                   flexDir={flexDir}
                   setFontSize={setFontSize}

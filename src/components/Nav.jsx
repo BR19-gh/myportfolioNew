@@ -65,6 +65,15 @@ const Navigation = ({ expanded, setExpanded }) => {
             Projects
           </Nav.Link>
           <Nav.Link
+            className={isActive("/stats") ? "active" : ""}
+            onClick={() => {
+              setExpanded(false);
+              navigate("/stats");
+            }}
+          >
+            Stats
+          </Nav.Link>
+          <Nav.Link
             className={isActive("/resume") ? "active" : ""}
             onClick={() => {
               setExpanded(false);

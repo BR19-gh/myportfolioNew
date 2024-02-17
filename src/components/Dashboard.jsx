@@ -56,17 +56,6 @@ const JobTitle = ({ myPrimaryColor, fontSize }) => {
   );
 };
 
-// const StatsSection = () => (
-//   <Row>
-//     <h3>Personal Stats</h3>
-
-//     <Image
-//       src="https://github-readme-stats.vercel.app/api/top-langs/?langs_count=5&username=BR19-gh&theme=nightowl&layout=donut-vertical"
-//       alt="Top Langs"
-//     />
-//   </Row>
-// );
-
 const Account = ({ name, icon, link }) => (
   <div className="circle">
     <Button

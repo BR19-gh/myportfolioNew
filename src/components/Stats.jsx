@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import { connect } from "react-redux";
-import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
+import { connect } from "react-redux";
 
-const Projects = (props) => {
+const Stats = (props) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1200) {
@@ -50,48 +49,32 @@ const Projects = (props) => {
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-tasks"></i>&nbsp;My
+          <i className="fas fa-chart-bar"></i>&nbsp;Personal
         </h1>
-        <h1 style={{ color: props.myPrimaryColor }}>&nbsp;Projects</h1>
+        <h1 style={{ color: props.myPrimaryColor }}>&nbsp;Stats</h1>
       </div>
-      {Object.keys(props.projects).map((id) => (
-        <Card
-          key={id}
+
+      <Container className="d-flex flex-wrap flex-column align-content-center">
+        <Image
           style={{
             width: "19rem",
             margin: props.fontSize === "sm" ? "0px" : "20px",
             marginBottom: "20px",
           }}
-        >
-          <Card.Img
-            style={{
-              height: "113px",
-            }}
-            variant="top"
-            src={props.projects[id].githubImg}
-            alt={props.projects[id].githubURL}
-          />
-          <Card.Body>
-            <Card.Title>{props.projects[id].title}</Card.Title>
-            <Card.Text
-              style={{
-                height: "50px",
-              }}
-            >
-              {props.projects[id].shortDescription}
-            </Card.Text>
-            <Button
-              onClick={() => {
-                window.open(props.projects[id].githubURL, "_blank");
-              }}
-              id="projects-btn"
-              variant="dark"
-            >
-              Go to Project
-            </Button>
-          </Card.Body>
-        </Card>
-      ))}
+          src="https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
+          alt="Top Langs"
+        />
+
+        <Image
+          style={{
+            width: "19rem",
+            margin: props.fontSize === "sm" ? "0px" : "20px",
+            marginBottom: "20px",
+          }}
+          src="https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
+          alt="Stats"
+        />
+      </Container>
     </Container>
   );
 };
@@ -103,4 +86,4 @@ const mapStateToProps = ({ projects, myPrimaryColor }) => {
   };
 };
 
-export default connect(mapStateToProps)(Projects);
+export default connect(mapStateToProps)(Stats);
