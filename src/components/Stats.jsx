@@ -85,11 +85,9 @@ const Stats = (props) => {
               marginBottom: "20px",
             }}
             src={
-              "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut" +
-                props.lang ===
-              "ar"
-                ? "&locale=ar"
-                : ""
+              props.lang === "ar"
+                ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar"
+                : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha"
             }
             alt="Top Langs"
           />
@@ -109,11 +107,9 @@ const Stats = (props) => {
               marginBottom: "20px",
             }}
             src={
-              "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github" +
-                props.lang ===
-              "ar"
-                ? "&locale=ar"
-                : ""
+              props.lang === "ar"
+                ? "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github&locale=ar"
+                : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
             }
             alt="Stats"
           />
