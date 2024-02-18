@@ -4,7 +4,7 @@
   <img align="center" src="https://github.com/BR19-gh/BR19-gh/blob/master/FullSizeRender.gif" alt=""/>
   <br><br>
   <div id="badges">
-  <a href="https://br19.herokuapp.com/">
+  <a href="https://br19.me">
     <img src="https://img.shields.io/badge/Portfolio-navy?style=for-the-badge&logo=website&logoColor=white" alt="Portfolio Badge"/>
   </a>
     <a href="https://www.linkedin.com/in/ibrahim-alkhowaiter-430b24203/">
@@ -20,7 +20,7 @@
 <br>
 <br>
 
-This is my updated Portfolio, created using React, Redux, different npm packages and Bootstrap, you can use its templates for personal purposes only.
+This is my updated Portfolio, created using React, Redux, several npm packages and Bootstrap, you can use its templates for personal purposes only.
 
 <img src="./public/readmeImg.png"></img>
 
