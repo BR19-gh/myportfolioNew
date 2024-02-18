@@ -84,7 +84,13 @@ const Stats = (props) => {
               margin: props.fontSize === "sm" ? "0px" : "20px",
               marginBottom: "20px",
             }}
-            src="https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
+            src={
+              "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut" +
+                props.lang ===
+              "ar"
+                ? "&locale=ar"
+                : ""
+            }
             alt="Top Langs"
           />
         </Tilt>
@@ -102,7 +108,13 @@ const Stats = (props) => {
               margin: props.fontSize === "sm" ? "0px" : "20px",
               marginBottom: "20px",
             }}
-            src="https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
+            src={
+              "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github" +
+                props.lang ===
+              "ar"
+                ? "&locale=ar"
+                : ""
+            }
             alt="Stats"
           />
         </Tilt>
