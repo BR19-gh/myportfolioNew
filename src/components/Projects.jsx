@@ -83,6 +83,7 @@ const Projects = (props) => {
           }}
         >
           <Card
+            className= "text-center"
             style={{
               width: "100%",
             }}
@@ -123,7 +124,7 @@ const Projects = (props) => {
                 }}
               >
                 {props.projects[id].skills.map((skill) => (
-                  <Badge key={skill} bg="primary">
+                  <Badge key={skill} bg="primary" style={{margin: "1px"}}>
                     {skill}
                   </Badge>
                 ))}
