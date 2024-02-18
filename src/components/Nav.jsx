@@ -101,12 +101,10 @@ const Navigation = ({ expanded, setExpanded, setLang, lang }) => {
               setExpanded(false);
               if (lang === "en") {
                 setLang("ar");
-                navigate("/ar");
-                window.location.reload();
+                window.location.href = "/ar";
               } else {
                 setLang("en");
-                navigate("/");
-                window.location.reload();
+                window.location.href = "/";
               }
             }}
           >
