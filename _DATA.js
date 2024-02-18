@@ -7,6 +7,17 @@ const PROJECTS = {
     githubURL: "https://github.com/BR19-gh/online-store-billing-system",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=online-store-billing-system&show_icons=true&theme=catppuccin_mocha",
+    skills: [
+      "Bootsrap",
+      "Flask",
+      "Python",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "SQL",
+      "Heroku",
+      "PostgresSQL",
+    ],
     image: null,
   },
   rsd: {
@@ -17,6 +28,17 @@ const PROJECTS = {
     githubURL: "https://github.com/BR19-gh/rsd",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=rsd&show_icons=true&theme=catppuccin_mocha",
+    skills: [
+      "Bootsrap",
+      "Flask",
+      "Python",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "SQL",
+      "Heroku",
+      "PostgresSQL",
+    ],
     image: null,
   },
   Runman: {
@@ -27,7 +49,17 @@ const PROJECTS = {
     githubURL: "https://github.com/BR19-gh/Runman",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=Runman&show_icons=true&theme=catppuccin_mocha",
-
+    skills: [
+      "Bootsrap",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "SQL",
+      "Heroku",
+      "PostgresSQL",
+      "Python",
+      "Flask",
+    ],
     image: null,
   },
   "employeePolls-Udacity": {
@@ -38,7 +70,15 @@ const PROJECTS = {
     githubURL: "https://github.com/BR19-gh/employeePolls-Udacity",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=employeePolls-Udacity&show_icons=true&theme=catppuccin_mocha",
-
+    skills: [
+      "Bootsrap-React",
+      "React",
+      "Redux",
+      "Javascript",
+      "CSS",
+      "react-router",
+      "npm",
+    ],
     image: null,
   },
   myportfolioNew: {
@@ -49,7 +89,27 @@ const PROJECTS = {
     githubURL: "https://github.com/BR19-gh/myportfolioNew",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=myportfolioNew&show_icons=true&theme=catppuccin_mocha",
-
+    skills: [
+      "Bootsrap-React",
+      "React",
+      "Redux",
+      "Javascript",
+      "CSS",
+      "react-router",
+      "npm",
+      "netlify",
+    ],
+    image: null,
+  },
+  moreInGithub: {
+    id: "6",
+    title: "Github",
+    shortDescription: "More in Github.",
+    shortDescriptionAr: "المزيد على Github.",
+    githubURL: "https://github.com/BR19-gh",
+    githubImg:
+      "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=BR19-gh&show_icons=true&theme=catppuccin_mocha",
+    skills: [],
     image: null,
   },
 };

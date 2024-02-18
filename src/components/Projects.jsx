@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 import { Tilt } from "react-tilt";
+import Badge from "react-bootstrap/Badge";
 
 const defaultOptions = {
   reverse: false, // reverse the tilt direction
@@ -94,17 +95,40 @@ const Projects = (props) => {
               src={props.projects[id].githubImg}
               alt={props.projects[id].githubURL}
             />
-            <Card.Body>
-              <Card.Title>{props.projects[id].title}</Card.Title>
+            <Card.Body
+              style={{
+                height: "260px",
+              }}
+            >
+              <Card.Title
+                style={{
+                  height: "35px",
+                }}
+              >
+                {props.projects[id].title}
+              </Card.Title>
               <Card.Text
                 style={{
-                  height: "50px",
+                  height: "40px",
                 }}
               >
                 {props.lang === "en"
                   ? props.projects[id].shortDescription
                   : props.projects[id].shortDescriptionAr}
               </Card.Text>
+
+              <Container
+                style={{
+                  height: "95px",
+                }}
+              >
+                {props.projects[id].skills.map((skill) => (
+                  <Badge key={skill} bg="primary">
+                    {skill}
+                  </Badge>
+                ))}
+              </Container>
+
               <Button
                 onClick={() => {
                   window.open(props.projects[id].githubURL, "_blank");
