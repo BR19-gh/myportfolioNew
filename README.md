@@ -85,6 +85,3 @@ To test the app using Jest, type:
 - Live in Unaizah - Riyadh, KSA 🌴🇸🇦.
 
 <div>
-
-
-<hr>
