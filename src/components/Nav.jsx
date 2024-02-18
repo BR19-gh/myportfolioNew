@@ -26,6 +26,8 @@ const Navigation = ({ expanded, setExpanded, setLang, lang }) => {
       <Navbar.Brand
         style={{
           cursor: "pointer",
+          marginLeft: lang==="ar" ? "10px" : "0px",
+          marginRight:lang==="en" ? "10px" : "0px"
         }}
         onClick={() => {
           if (lang === "ar") navigate("/ar");

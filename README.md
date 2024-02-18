@@ -20,7 +20,7 @@
 <br>
 <br>
 
-This is my updated Portfolio, created using React, Redux, several npm packages and Bootstrap, you can use its templates for personal purposes only.
+This is my updated Portfolio, created using React, Redux, Bootstrap and several npm packages, you can use its templates for personal purposes only.
 
 <img src="./public/readmeImg.png"></img>
 

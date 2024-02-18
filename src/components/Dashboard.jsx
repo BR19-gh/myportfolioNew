@@ -23,7 +23,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
           fontSize: fontSize === "lg" ? "25px" : "16px",
           color: myPrimaryColor,
           fontWeight: "bold",
-          letterSpacing: "2px",
+          letterSpacing: lang === "en" ? "2px" : "0px",
         }}
       >
         <Typewriter
@@ -58,8 +58,8 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
   );
 };
 
-const Account = ({ name, icon, link }) => (
-  <div className="circle">
+const Account = ({ name, icon, link, lang }) => (
+  <div className={lang==="en"? "circle-left" : "circle-right"}>
     <Button
       variant="dark"
       className={name}
@@ -79,7 +79,7 @@ const Account = ({ name, icon, link }) => (
   </div>
 );
 
-const AccountsSection = ({ accounts }) => (
+const AccountsSection = ({ accounts, lang }) => (
   <div className="circle-container">
     {Object.keys(accounts).map((account) => (
       <Account
@@ -87,6 +87,7 @@ const AccountsSection = ({ accounts }) => (
         name={accounts[account].name}
         icon={accounts[account].icon}
         link={accounts[account].link}
+        lang={lang}
       />
     ))}
   </div>
@@ -147,7 +148,7 @@ const AboutMeSection = ({ myPrimaryColor, fontSize, accounts, lang }) => {
           }
         ></i>
       </Button>
-      <AccountsSection accounts={accounts} />
+      <AccountsSection lang={lang} accounts={accounts} />
     </Col>
   );
 };
