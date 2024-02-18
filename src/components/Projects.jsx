@@ -63,9 +63,13 @@ const Projects = (props) => {
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-laptop-code"></i>&nbsp;My
+          <i className="fas fa-laptop-code"></i>
+          {props.lang === "en" ? " My" : " مشاريـ"}
         </h1>
-        <h1 style={{ color: props.myPrimaryColor }}>&nbsp;Projects</h1>
+        <h1 style={{ color: props.myPrimaryColor }}>
+          {props.lang === "en" ? <a>&nbsp;</a> : null}
+          {props.lang === "en" ? "Projects" : "ـعي"}
+        </h1>
       </div>
       {Object.keys(props.projects).map((id) => (
         <Tilt
@@ -97,7 +101,9 @@ const Projects = (props) => {
                   height: "50px",
                 }}
               >
-                {props.projects[id].shortDescription}
+                {props.lang === "en"
+                  ? props.projects[id].shortDescription
+                  : props.projects[id].shortDescriptionAr}
               </Card.Text>
               <Button
                 onClick={() => {
@@ -106,7 +112,7 @@ const Projects = (props) => {
                 id="projects-btn"
                 variant="dark"
               >
-                Go to Project
+                {props.lang === "en" ? "Go to Project" : "الذهاب للمشروع"}
               </Button>
             </Card.Body>
           </Card>

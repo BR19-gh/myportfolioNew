@@ -17,24 +17,39 @@ const App = (props) => {
   const [flexDir, setFlexDir] = useState("row");
   const [fontSize, setFontSize] = useState("lg");
   const [expanded, setExpanded] = useState(false);
+  const [lang, setLang] = useState("en");
+  const langPath = `${
+    window.location.pathname[window.location.pathname.length - 2]
+  }${window.location.pathname[window.location.pathname.length - 1]}`;
 
   useEffect(() => {
+    if (langPath === "ar") {
+      setLang("ar");
+    } else {
+      setLang("en");
+    }
     props.dispatch(handleInitialData());
   }, []);
 
   return (
     <Container>
       <LoadingBar style={{ backgroundColor: props.myPrimaryColor }} />
-      <Nav expanded={expanded} setExpanded={setExpanded} />
+      <Nav
+        expanded={expanded}
+        setExpanded={setExpanded}
+        setLang={setLang}
+        lang={lang}
+      />
 
       <div className="content-container">
         {props.loading === true ? null : (
           <Routes>
             <Route
-              path="/"
+              path={lang === "ar" ? "/ar" : "/"}
               exact
               element={
                 <Dashboard
+                  lang={lang}
                   setExpanded={setExpanded}
                   flexDir={flexDir}
                   setFontSize={setFontSize}
@@ -44,9 +59,10 @@ const App = (props) => {
               }
             />
             <Route
-              path="/projects"
+              path={lang === "ar" ? "/projects/ar" : "/projects"}
               element={
                 <Projects
+                  lang={lang}
                   setExpanded={setExpanded}
                   flexDir={flexDir}
                   setFontSize={setFontSize}
@@ -57,9 +73,10 @@ const App = (props) => {
             />
 
             <Route
-              path="/aboutme"
+              path={lang === "ar" ? "/aboutme/ar" : "/aboutme"}
               element={
                 <AboutMe
+                  lang={lang}
                   setExpanded={setExpanded}
                   flexDir={flexDir}
                   setFontSize={setFontSize}
@@ -69,9 +86,10 @@ const App = (props) => {
               }
             />
             <Route
-              path="/stats"
+              path={lang === "ar" ? "/stats/ar" : "/stats"}
               element={
                 <Stats
+                  lang={lang}
                   setExpanded={setExpanded}
                   flexDir={flexDir}
                   setFontSize={setFontSize}
@@ -81,9 +99,10 @@ const App = (props) => {
               }
             />
             <Route
-              path="/resume"
+              path={lang === "ar" ? "/resume/ar" : "/resume"}
               element={
                 <Resume
+                  lang={lang}
                   setExpanded={setExpanded}
                   flexDir={flexDir}
                   setFontSize={setFontSize}

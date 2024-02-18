@@ -62,9 +62,12 @@ const Stats = (props) => {
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-chart-bar"></i>&nbsp;Personal
+          <i className="fas fa-chart-bar"></i>&nbsp;
+          {props.lang === "en" ? "Personal" : "أحصائيات"}
         </h1>
-        <h1 style={{ color: props.myPrimaryColor }}>&nbsp;Stats</h1>
+        <h1 style={{ color: props.myPrimaryColor }}>
+          &nbsp;{props.lang === "en" ? "Stats" : "شخصية"}
+        </h1>
       </div>
 
       <Container className="d-flex flex-wrap flex-column align-content-center">

@@ -11,11 +11,11 @@ import { Tilt } from "react-tilt";
 import { useNavigate } from "react-router-dom";
 import sticker from "../../public/avatar/sticker.png";
 
-const JobTitle = ({ myPrimaryColor, fontSize }) => {
+const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
   return (
     <div className="mb-3" style={{ display: "flex" }}>
       <h4 style={{ fontSize: fontSize === "lg" ? "25px" : "16px" }}>
-        and I'm a&nbsp;
+        {lang === "en" ? "and I'm a" : "وأنا"}&nbsp;
       </h4>
       <h4
         id="typewriter"
@@ -37,15 +37,17 @@ const JobTitle = ({ myPrimaryColor, fontSize }) => {
               .pauseFor(200)
               .changeDelay(40)
               .changeDeleteSpeed(3)
-              .typeString("Fullstack Developer")
+              .typeString(
+                lang === "en" ? "Fullstack Developer" : "مطور ويب متكامل"
+              )
               .pauseFor(1000)
               .deleteChars(20)
               .pauseFor(100)
-              .typeString("Frontend Developer")
+              .typeString(lang === "en" ? "Frontend Developer" : "مطور واجهات")
               .pauseFor(1000)
               .deleteChars(18)
               .pauseFor(100)
-              .typeString("Backend Developer")
+              .typeString(lang === "en" ? "Backend Developer" : "مطور خلفية")
               .pauseFor(1000)
               .deleteChars(18)
               .start();
@@ -90,7 +92,7 @@ const AccountsSection = ({ accounts }) => (
   </div>
 );
 
-const AboutMeSection = ({ myPrimaryColor, fontSize, accounts }) => {
+const AboutMeSection = ({ myPrimaryColor, fontSize, accounts, lang }) => {
   const navigate = useNavigate();
   return (
     <Col
@@ -106,15 +108,19 @@ const AboutMeSection = ({ myPrimaryColor, fontSize, accounts }) => {
         style={{ fontSize: fontSize === "lg" ? "55px" : "40px" }}
         className="mb-3"
       >
-        Hello, World!
+        {lang === "en" ? "Hello, World!" : "مرحبا بالعالم!"}
       </h1>
       <h1
         style={{ fontSize: fontSize === "lg" ? "35px" : "25px" }}
         className="mb-3"
       >
-        I'm Ibrahim Alkhowaiter
+        {lang === "en" ? "I'm Ibrahim Alkhowaiter" : "أنا ابراهيم الخويطر"}
       </h1>
-      <JobTitle fontSize={fontSize} myPrimaryColor={myPrimaryColor} />
+      <JobTitle
+        lang={lang}
+        fontSize={fontSize}
+        myPrimaryColor={myPrimaryColor}
+      />
 
       <Button
         id="about-me-btn"
@@ -125,10 +131,21 @@ const AboutMeSection = ({ myPrimaryColor, fontSize, accounts }) => {
         }}
         size="lg"
         onClick={() => {
-          navigate("/aboutme");
+          if (lang === "en") {
+            navigate("/aboutme");
+          } else {
+            navigate("/aboutme/ar");
+          }
         }}
       >
-        About Me <i className="fas fa-arrow-circle-right"></i>
+        {lang === "en" ? "About Me" : "عــنـــــــي"}
+        <i
+          className={
+            lang === "en"
+              ? "fas fa-arrow-circle-right"
+              : "fas fa-arrow-circle-left"
+          }
+        ></i>
       </Button>
       <AccountsSection accounts={accounts} />
     </Col>
@@ -186,6 +203,7 @@ const Dashboard = ({
   fontSize,
   setExpanded,
   accounts,
+  lang,
 }) => {
   // const [pageLoaded, setPageLoaded] = useState(false);
 
@@ -239,6 +257,7 @@ const Dashboard = ({
         }}
       >
         <AboutMeSection
+          lang={lang}
           accounts={accounts}
           myPrimaryColor={myPrimaryColor}
           flexDir={flexDir}

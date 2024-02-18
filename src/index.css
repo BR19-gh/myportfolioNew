@@ -97,3 +97,7 @@ body {
   width: 0 !important;
   height: 0 !important;
 }
+
+.me-auto.navbar-nav {
+  margin-right: 16px !important;
+}

@@ -29,6 +29,7 @@ const Resume = ({
   flexDir,
   fontSize,
   setExpanded,
+  lang,
 }) => {
   useEffect(() => {
     const handleResize = () => {
@@ -75,9 +76,11 @@ const Resume = ({
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-file"></i>&nbsp;My
+          <i className="fas fa-file"></i> {lang === "en" ? "My" : "السيرة"}
         </h1>
-        <h1 style={{ color: myPrimaryColor }}>&nbsp;Resume</h1>
+        <h1 style={{ color: myPrimaryColor }}>
+          &nbsp;{lang === "en" ? "Resume" : "الذاتية"}
+        </h1>
       </div>
       <Container
         className="d-flex justify-content-center"
@@ -103,7 +106,7 @@ const Resume = ({
         id="projects-btn"
         variant="dark"
       >
-        Open Resume
+        {lang === "en" ? "Open Resume" : "افتح السيرة"}
       </Button>
     </Container>
   );

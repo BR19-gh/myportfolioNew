@@ -11,6 +11,7 @@ const NotFound = ({
   setFontSize,
   fontSize,
   setExpanded,
+  lang,
 }) => {
   useEffect(() => {
     const handleResize = () => {
@@ -57,16 +58,16 @@ const NotFound = ({
             fontSize: fontSize === "lg" ? "80px" : "35px",
           }}
         >
-          Error 404 خطأ
+          {lang === "en" ? "Error 404" : "خطأ 404"}
         </h1>
         <p
           style={{
             fontSize: fontSize === "lg" ? "30px" : "15px",
           }}
         >
-          الصفحة التي تبحث عنها غير موجودة
-          <br />
-          The page you are looking for does not exist
+          {lang === "en"
+            ? "The page you are looking for does not exist"
+            : "الصفحة التي تبحث عنها غير موجودة"}
         </p>
       </div>
     </Container>

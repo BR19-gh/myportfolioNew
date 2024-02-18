@@ -3,6 +3,7 @@ const PROJECTS = {
     id: "1",
     title: "OSBS",
     shortDescription: "Online Store Billing System",
+    shortDescriptionAr: "نظام فوترة ومتجر الكتروني",
     githubURL: "https://github.com/BR19-gh/online-store-billing-system",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=online-store-billing-system&show_icons=true&theme=catppuccin_mocha",
@@ -12,6 +13,7 @@ const PROJECTS = {
     id: "2",
     title: "RSD",
     shortDescription: "Record students degrees management system.",
+    shortDescriptionAr: "نظام لإدارة درجات الطلاب",
     githubURL: "https://github.com/BR19-gh/rsd",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=rsd&show_icons=true&theme=catppuccin_mocha",
@@ -21,6 +23,7 @@ const PROJECTS = {
     id: "3",
     title: "Runman",
     shortDescription: "Side-scrolling pixel game.",
+    shortDescriptionAr: "لعبة منصات برسوم بكسلية",
     githubURL: "https://github.com/BR19-gh/Runman",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=Runman&show_icons=true&theme=catppuccin_mocha",
@@ -31,6 +34,7 @@ const PROJECTS = {
     id: "4",
     title: "Employee Polls",
     shortDescription: "Participate and create polls.",
+    shortDescriptionAr: "مشاركة وإنشاء استطلاعات",
     githubURL: "https://github.com/BR19-gh/employeePolls-Udacity",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=employeePolls-Udacity&show_icons=true&theme=catppuccin_mocha",
@@ -41,6 +45,7 @@ const PROJECTS = {
     id: "5",
     title: "My Portfolio",
     shortDescription: "This portfolio website.",
+    shortDescriptionAr: "هذا الموقع الشخصي",
     githubURL: "https://github.com/BR19-gh/myportfolioNew",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=myportfolioNew&show_icons=true&theme=catppuccin_mocha",

@@ -16,6 +16,7 @@ const AboutMe = ({
   setFontSize,
   flexDir,
   setExpanded,
+  lang,
 }) => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -62,9 +63,13 @@ const AboutMe = ({
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-user"></i>&nbsp;About
+          <i className="fas fa-user"></i>&nbsp;
+          {lang === "en" ? "About" : "عنـــ"}
         </h1>
-        <h1 style={{ color: myPrimaryColor }}>&nbsp;Me</h1>
+        <h1 style={{ color: myPrimaryColor }}>
+          {lang === "en" ? <a>&nbsp;</a> : null}
+          {lang === "en" ? "Me" : "ـــي"}
+        </h1>
       </div>
 
       <Container
@@ -72,12 +77,13 @@ const AboutMe = ({
           (flexDir === "row" ? "d-flex " : "") + "justify-content-center"
         }
       >
-        {/* <ImageSection fontSize={fontSize} flexDir={flexDir} /> */}
-
         <div
           style={{
-            textAlign: "left",
-            paddingLeft: flexDir === "column" ? "0px" : "50px",
+            textAlign: lang === "en" ? "left" : "right",
+            paddingLeft:
+              lang === "en" ? (flexDir === "column" ? "0px" : "50px") : "",
+            paddingRight:
+              lang === "ar" ? (flexDir === "column" ? "0px" : "50px") : "",
 
             lineHeight: "1.5",
           }}
@@ -87,7 +93,7 @@ const AboutMe = ({
               fontWeight: "bold",
             }}
           >
-            I'm Ibrahim
+            {lang === "en" ? "I'm Ibrahim" : "أنا ابراهيم"}
           </h3>
           <div
             id="typewriter"
@@ -107,15 +113,21 @@ const AboutMe = ({
                   .pauseFor(200)
                   .changeDelay(40)
                   .changeDeleteSpeed(3)
-                  .typeString("Fullstack Developer")
+                  .typeString(
+                    lang === "en" ? "Fullstack Developer" : "مطور ويب متكامل"
+                  )
                   .pauseFor(1000)
                   .deleteChars(20)
                   .pauseFor(100)
-                  .typeString("Frontend Developer")
+                  .typeString(
+                    lang === "en" ? "Frontend Developer" : "مطور واجهات"
+                  )
                   .pauseFor(1000)
                   .deleteChars(18)
                   .pauseFor(100)
-                  .typeString("Backend Developer")
+                  .typeString(
+                    lang === "en" ? "Backend Developer" : "مطور خلفية"
+                  )
                   .pauseFor(1000)
                   .deleteChars(18)
                   .start();
@@ -129,13 +141,22 @@ const AboutMe = ({
               textAlign: "justify",
             }}
           >
-            I have a Bachelor's degree in Computer Science from QU, and I have a
+            {lang === "en"
+              ? `I have a Bachelor's degree in Computer Science from QU, and I have a
             strong background in Fullstack Web Development. Throughout my
             academic journey, I have obtained various certificates and completed
             relevant courses to enhance my skills and stay up to date with the
             latest industry trends. I am eager to learn new technologies, to
             contribute my expertise to innovative projects and to make a
-            meaningful impact in the world of software development.
+            meaningful impact in the world of software development.`
+              : ` 
+            حاصل على درجة البكالوريوس في علوم
+             الحاسوب من جامعة القصيم، ولدي خلفية قوية في تطوير الويب.
+             طوال رحلتي الأكاديمية، حصلت على شهادات متنوعة
+              وأكملت دورات ذات صلة لتعزيز مهاراتي واحرص
+              على اطلاع دائم على مستجدات مجالي. أنا حريص على تعلم
+              التقنيات الجديدة، للمساهمة بخبرتي في مشاريع مبتكرة،
+              وتحقيق تأثير ذو معنى في مجال البرمجيات.            `}
             <br />
             <br />
             <a
@@ -144,7 +165,7 @@ const AboutMe = ({
                 fontWeight: "bold",
               }}
             >
-              Email:&nbsp;&nbsp;
+              {lang === "en" ? "Email" : "البريد"}:&nbsp;&nbsp;
             </a>
             <a
               style={{
@@ -162,9 +183,11 @@ const AboutMe = ({
                 fontWeight: "bold",
               }}
             >
-              Location:&nbsp;&nbsp;
+              {lang === "en" ? "Location" : "الموقع"}:&nbsp;&nbsp;
             </a>
-            Qassim - Riyadh, Saudi Arabia
+            {lang === "en"
+              ? "Qassim - Riyadh, Saudi Arabia"
+              : "القصيم - الرياض، السعودية"}
           </p>
           <Button
             id="resume-btn"
@@ -175,10 +198,15 @@ const AboutMe = ({
             }}
             size="lg"
             onClick={() => {
-              navigate("/resume");
+              if (lang === "en") {
+                navigate("/resume");
+              } else {
+                navigate("/resume/ar");
+              }
             }}
           >
-            Resume <i className="far fa-file"></i>
+            {lang === "en" ? "Resume" : "السيرة"}{" "}
+            <i className="far fa-file"></i>
           </Button>
           <a style={{ margin: "5px" }}></a>
           <Button
@@ -190,10 +218,15 @@ const AboutMe = ({
             }}
             size="lg"
             onClick={() => {
-              navigate("/projects");
+              if (lang === "en") {
+                navigate("/projects");
+              } else {
+                navigate("/projects/ar");
+              }
             }}
           >
-            Projects <i className="fas fa-tasks"></i>
+            {lang === "en" ? "Projects" : "المشاريع"}{" "}
+            <i className="fas fa-tasks"></i>
           </Button>
         </div>
       </Container>

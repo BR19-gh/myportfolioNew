@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import icon from "../../public/icon.png";
 
-const Navigation = ({ expanded, setExpanded }) => {
+const Navigation = ({ expanded, setExpanded, setLang, lang }) => {
   const navigate = useNavigate();
   const isActive = (path) => window.location.pathname === path;
 
@@ -27,7 +27,10 @@ const Navigation = ({ expanded, setExpanded }) => {
         style={{
           cursor: "pointer",
         }}
-        onClick={() => navigate("/")}
+        onClick={() => {
+          if (lang === "ar") navigate("/ar");
+          else navigate("/");
+        }}
       >
         <Image src={icon} style={{ height: "40px" }} />
       </Navbar.Brand>
@@ -36,51 +39,76 @@ const Navigation = ({ expanded, setExpanded }) => {
         aria-controls="navbarScroll"
       />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
+        <Nav className="me-auto" style={{ textAlign: "end" }}>
           <Nav.Link
-            className={isActive("/") ? "active" : ""}
+            className={isActive("/") || isActive("/ar") ? "active" : ""}
             onClick={() => {
               setExpanded(false);
-              navigate("/");
+              if (lang === "ar") navigate("/ar");
+              else navigate("/");
             }}
           >
-            Home
+            {lang === "en" ? "Home" : "الصفحة الرئيسية"}
           </Nav.Link>
           <Nav.Link
-            className={isActive("/aboutme") ? "active" : ""}
+            className={
+              isActive("/aboutme") || isActive("/aboutme/ar") ? "active" : ""
+            }
             onClick={() => {
               setExpanded(false);
-              navigate("/aboutme");
+              if (lang === "ar") navigate("/aboutme/ar");
+              else navigate("/aboutme");
             }}
           >
-            About Me
+            {lang === "en" ? "About Me" : "عــنـــــــي"}
           </Nav.Link>
           <Nav.Link
-            className={isActive("/projects") ? "active" : ""}
+            className={
+              isActive("/projects") || isActive("/projects/ar") ? "active" : ""
+            }
             onClick={() => {
               setExpanded(false);
-              navigate("/projects");
+              if (lang === "ar") navigate("/projects/ar");
+              else navigate("/projects");
             }}
           >
-            Projects
+            {lang === "en" ? "Projects" : "المشاريع"}
           </Nav.Link>
           <Nav.Link
             className={isActive("/stats") ? "active" : ""}
             onClick={() => {
               setExpanded(false);
-              navigate("/stats");
+              if (lang === "ar") navigate("/stats/ar");
+              else navigate("/stats");
             }}
           >
-            Stats
+            {lang === "en" ? "Stats" : "الاحصائيات"}
           </Nav.Link>
           <Nav.Link
-            className={isActive("/resume") ? "active" : ""}
+            className={
+              isActive("/resume") || isActive("/resume/ar") ? "active" : ""
+            }
             onClick={() => {
               setExpanded(false);
-              navigate("/resume");
+              if (lang === "ar") navigate("/resume/ar");
+              else navigate("/resume");
             }}
           >
-            Resume
+            {lang === "en" ? "Resume" : "السيرة الذاتية"}
+          </Nav.Link>
+          <Nav.Link
+            onClick={() => {
+              setExpanded(false);
+              if (lang === "en") {
+                setLang("ar");
+                window.location.href = "/ar";
+              } else {
+                setLang("en");
+                window.location.href = "/";
+              }
+            }}
+          >
+            {lang === "en" ? "Language: EN" : "اللغة: عربي"}
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

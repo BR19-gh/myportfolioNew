@@ -20,3 +20,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Provider>
   </Container>
 );
+
+if (
+  `${window.location.pathname[window.location.pathname.length - 2]}${
+    window.location.pathname[window.location.pathname.length - 1]
+  }` === "ar"
+) {
+  document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
+  document.getElementsByTagName("html")[0].setAttribute("lang", "ar-SA");
+} else {
+  null;
+}
