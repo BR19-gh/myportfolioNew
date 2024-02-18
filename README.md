@@ -20,9 +20,62 @@
 <br>
 <br>
 
+# My portfolio
+
+## Overview
+
 This is my updated Portfolio, created using React, Redux, Bootstrap and several npm packages, you can use its templates for personal purposes only.
 
-<img src="./public/readmeImg.png"></img>
+## Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/BR19-gh/myPortfolioNew.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd myPortfolioNew
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Testing (Jest):
+To test the app using Jest, type:
+   ```bash
+   npm test
+   ```
+
+## Usage
+
+1. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Open your browser and visit [http://localhost:5173](http://localhost:5173) to use the Employee Polls Web App.
+
+## Folder Structure
+
+- `src/components`: Contains React components
+- `src/actions`: Redux action creators
+- `src/reducers`: Redux reducers
+- `src/store`: Redux store configuration
+- `public`: Public assets
+
+## Sample Screenshots
+
+### Home Page
+![Home Page](./public/readmeImg.png)
+
+<hr>
 
 ## About me 🔎:
 
