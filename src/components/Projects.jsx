@@ -4,6 +4,19 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
+import { Tilt } from "react-tilt";
+
+const defaultOptions = {
+  reverse: false, // reverse the tilt direction
+  max: 20, // max tilt rotation (degrees)
+  perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
+  scale: 1, // 2 = 200%, 1.5 = 150%, etc..
+  speed: 2000, // Speed of the enter/exit transition
+  transition: true, // Set a transition on enter/exit.
+  axis: null, // What axis should be disabled. Can be X or Y.
+  reset: true, // If the tilt effect has to be reset on exit.
+  easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
+};
 
 const Projects = (props) => {
   useEffect(() => {
@@ -45,52 +58,59 @@ const Projects = (props) => {
                 ? "20px"
                 : "-60px"
               : "-90px",
-          marginBottom: "45px",
+          marginBottom: "30px",
         }}
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-tasks"></i>&nbsp;My
+          <i className="fas fa-laptop-code"></i>&nbsp;My
         </h1>
         <h1 style={{ color: props.myPrimaryColor }}>&nbsp;Projects</h1>
       </div>
       {Object.keys(props.projects).map((id) => (
-        <Card
+        <Tilt
           key={id}
+          options={defaultOptions}
           style={{
             width: "19rem",
             margin: props.fontSize === "sm" ? "0px" : "20px",
             marginBottom: "20px",
           }}
         >
-          <Card.Img
+          <Card
             style={{
-              height: "113px",
+              width: "100%",
             }}
-            variant="top"
-            src={props.projects[id].githubImg}
-            alt={props.projects[id].githubURL}
-          />
-          <Card.Body>
-            <Card.Title>{props.projects[id].title}</Card.Title>
-            <Card.Text
+          >
+            <Card.Img
               style={{
-                height: "50px",
+                height: "113px",
               }}
-            >
-              {props.projects[id].shortDescription}
-            </Card.Text>
-            <Button
-              onClick={() => {
-                window.open(props.projects[id].githubURL, "_blank");
-              }}
-              id="projects-btn"
-              variant="dark"
-            >
-              Go to Project
-            </Button>
-          </Card.Body>
-        </Card>
+              variant="top"
+              src={props.projects[id].githubImg}
+              alt={props.projects[id].githubURL}
+            />
+            <Card.Body>
+              <Card.Title>{props.projects[id].title}</Card.Title>
+              <Card.Text
+                style={{
+                  height: "50px",
+                }}
+              >
+                {props.projects[id].shortDescription}
+              </Card.Text>
+              <Button
+                onClick={() => {
+                  window.open(props.projects[id].githubURL, "_blank");
+                }}
+                id="projects-btn"
+                variant="dark"
+              >
+                Go to Project
+              </Button>
+            </Card.Body>
+          </Card>
+        </Tilt>
       ))}
     </Container>
   );

@@ -82,3 +82,18 @@ body {
     opacity: 1;
   }
 }
+
+.react-pdf__Page__canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.react-pdf__Page__textContent.textLayer {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+  width: 0 !important;
+  height: 0 !important;
+}

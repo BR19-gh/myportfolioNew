@@ -57,7 +57,7 @@ const AboutMe = ({
                 ? "70px"
                 : "-60px"
               : "-90px",
-          marginBottom: flexDir === "column" ? "50px" : "100px",
+          marginBottom: flexDir === "column" ? "30px" : "80px",
         }}
         className="d-flex justify-content-center"
       >
