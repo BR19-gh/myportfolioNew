@@ -17,8 +17,7 @@
 </div>
 </div> 
 
-<br>
-<br>
+<hr>
 
 # My portfolio
 
