@@ -195,7 +195,7 @@ const AboutMe = ({
             style={{
               width: "140px",
             }}
-            size="lg"
+            size="md"
             onClick={() => {
               if (lang === "en") {
                 navigate("/resume");
@@ -215,7 +215,7 @@ const AboutMe = ({
             style={{
               width: "140px",
             }}
-            size="lg"
+            size="md"
             onClick={() => {
               if (lang === "en") {
                 navigate("/projects");
