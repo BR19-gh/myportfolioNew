@@ -100,11 +100,11 @@ const Navigation = ({ expanded, setExpanded, setLang, lang }) => {
             onClick={() => {
               setExpanded(false);
               if (lang === "en") {
-                setLang("ar");
                 window.location.href = "/ar";
+                setLang("ar");
               } else {
-                setLang("en");
                 window.location.href = "/";
+                setLang("en");
               }
             }}
           >
