@@ -225,7 +225,7 @@ const AboutMe = ({
             }}
           >
             {lang === "en" ? "Projects" : "المشاريع"}{" "}
-            <i className="fas fa-tasks"></i>
+            <i className="fas fa-laptop-code"></i>
           </Button>
         </div>
       </Container>
