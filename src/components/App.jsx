@@ -45,7 +45,7 @@ const App = (props) => {
         {props.loading === true ? null : (
           <Routes>
             <Route
-              path={lang === "ar" ? "/ar" : "/"}
+              path={"/"}
               exact
               element={
                 <Dashboard
@@ -59,7 +59,34 @@ const App = (props) => {
               }
             />
             <Route
-              path={lang === "ar" ? "/projects/ar" : "/projects"}
+              path={"/ar"}
+              exact
+              element={
+                <Dashboard
+                  lang={lang}
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
+            <Route
+              path={"/projects"}
+              element={
+                <Projects
+                  lang={lang}
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
+            <Route
+              path={"/projects/ar"}
               element={
                 <Projects
                   lang={lang}
@@ -73,7 +100,7 @@ const App = (props) => {
             />
 
             <Route
-              path={lang === "ar" ? "/aboutme/ar" : "/aboutme"}
+              path={"/aboutme"}
               element={
                 <AboutMe
                   lang={lang}
@@ -86,7 +113,20 @@ const App = (props) => {
               }
             />
             <Route
-              path={lang === "ar" ? "/stats/ar" : "/stats"}
+              path={"/aboutme/ar"}
+              element={
+                <AboutMe
+                  lang={lang}
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
+            <Route
+              path={"/stats"}
               element={
                 <Stats
                   lang={lang}
@@ -99,7 +139,33 @@ const App = (props) => {
               }
             />
             <Route
-              path={lang === "ar" ? "/resume/ar" : "/resume"}
+              path={"/stats/ar"}
+              element={
+                <Stats
+                  lang={lang}
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
+            <Route
+              path={"/resume"}
+              element={
+                <Resume
+                  lang={lang}
+                  setExpanded={setExpanded}
+                  flexDir={flexDir}
+                  setFontSize={setFontSize}
+                  fontSize={fontSize}
+                  setFlexDir={setFlexDir}
+                />
+              }
+            />
+            <Route
+              path={"/resume/ar"}
               element={
                 <Resume
                   lang={lang}
