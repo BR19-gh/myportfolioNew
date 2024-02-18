@@ -99,7 +99,7 @@ const AboutMe = ({
             id="typewriter"
             style={{
               fontWeight: "bold",
-              letterSpacing: "2px",
+              letterSpacing: lang === "en" ? "2px" : "0px",
             }}
           >
             <Typewriter
