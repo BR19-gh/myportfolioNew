@@ -23,7 +23,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
           fontSize: fontSize === "lg" ? "25px" : "16px",
           color: myPrimaryColor,
           fontWeight: "bold",
-          letterSpacing: "2px",
+          letterSpacing: lang === "en" ? "2px" : "0px",
         }}
       >
         <Typewriter
