@@ -15,7 +15,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
   return (
     <div className="mb-3" style={{ display: "flex" }}>
       <h4 style={{ fontSize: fontSize === "lg" ? "25px" : "20px" }}>
-        {lang === "en" ? "and I'm a " : "وأنا "}
+        {lang === "en" ? "and I'm a " : "وأنا"}&nbsp;
       </h4>
       <h4
         id="typewriter"
