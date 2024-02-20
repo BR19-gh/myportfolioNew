@@ -20,7 +20,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
       <h4
         id="typewriter"
         style={{
-          fontSize: fontSize === "lg" ? "25px" : "16px",
+          fontSize: fontSize === "lg" ? "25px" : "20px",
           color: myPrimaryColor,
           fontWeight: "bold",
           letterSpacing: lang === "ar" ? "0px" : "4px",
