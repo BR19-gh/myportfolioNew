@@ -7,7 +7,7 @@
 * {
   user-select: none;
   -webkit-user-select: none;
-  font-family: "Work Sans", "Tajawal";
+  /* font-family: "Work Sans", "Tajawal"; */
 }
 
 body {
@@ -45,8 +45,13 @@ body {
   margin-left: 20px;
 }
 
+@font-face {
+  font-family: "sf-mono";
+  src: url("../public/SF-Mono.dmg");
+}
+
 #typewriter {
-  font-family: "Consolas" !important;
+  font-family: "Handjet", sans-serif;
 }
 
 #about-me-btn {

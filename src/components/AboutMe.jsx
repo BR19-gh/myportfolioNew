@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { connect } from "react-redux";
 import Container from "react-bootstrap/Container";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-simple-typewriter";
 import Button from "react-bootstrap/Button";
 // import Image from "react-bootstrap/Image";
 import { useEffect } from "react";
@@ -63,12 +63,12 @@ const AboutMe = ({
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-user"></i>&nbsp;
-          {lang === "en" ? "About" : "عنـــ"}
+          <i className="fas fa-user"></i>&nbsp;&nbsp;
+          {lang === "en" ? "About" : "عنـــــ"}
         </h1>
         <h1 style={{ color: myPrimaryColor }}>
           {lang === "en" ? <a>&nbsp;</a> : null}
-          {lang === "en" ? "Me" : "ـــي"}
+          {lang === "en" ? "Me" : "ــي"}
         </h1>
       </div>
 
@@ -99,39 +99,23 @@ const AboutMe = ({
             id="typewriter"
             style={{
               fontWeight: "bold",
-              letterSpacing: lang === "en" ? "2px" : "0px",
+              letterSpacing: lang === "ar" ? "0px" : "4px",
             }}
           >
             <Typewriter
-              options={{
-                loop: true,
-                delay: 75,
-                autoStart: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .pauseFor(200)
-                  .changeDelay(40)
-                  .changeDeleteSpeed(3)
-                  .typeString(
-                    lang === "en" ? "Fullstack Developer" : "مطور ويب متكامل"
-                  )
-                  .pauseFor(1000)
-                  .deleteChars(20)
-                  .pauseFor(100)
-                  .typeString(
-                    lang === "en" ? "Frontend Developer" : "مطور واجهات"
-                  )
-                  .pauseFor(1000)
-                  .deleteChars(18)
-                  .pauseFor(100)
-                  .typeString(
-                    lang === "en" ? "Backend Developer" : "مطور خلفية"
-                  )
-                  .pauseFor(1000)
-                  .deleteChars(18)
-                  .start();
-              }}
+              words={[
+                lang === "en"
+                  ? "Fullstack Developer"
+                  : "مـطــور ويــب مـتـكــامـل",
+                lang === "en" ? "Frontend Developer" : "مـطــور واجـهــات",
+                lang === "en" ? "Backend Developer" : "مـطــور خـلـفـيــة",
+              ]}
+              loop={false}
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={30}
+              delaySpeed={1000}
             />
           </div>
           <br />
@@ -195,7 +179,7 @@ const AboutMe = ({
             style={{
               width: "140px",
             }}
-            size="md"
+            size="lg"
             onClick={() => {
               if (lang === "en") {
                 navigate("/resume");
@@ -204,7 +188,8 @@ const AboutMe = ({
               }
             }}
           >
-            {lang === "en" ? "Resume" : "السيرة"}{" "}
+            {lang === "en" ? "Resume" : "السيرة"}
+            &nbsp;&nbsp;
             <i className="far fa-file"></i>
           </Button>
           <a style={{ margin: "5px" }}></a>
@@ -215,7 +200,7 @@ const AboutMe = ({
             style={{
               width: "140px",
             }}
-            size="md"
+            size="lg"
             onClick={() => {
               if (lang === "en") {
                 navigate("/projects");
@@ -224,7 +209,8 @@ const AboutMe = ({
               }
             }}
           >
-            {lang === "en" ? "Projects" : "المشاريع"}{" "}
+            {lang === "en" ? "Projects" : "المشاريع"}
+            &nbsp;&nbsp;
             <i className="fas fa-laptop-code"></i>
           </Button>
         </div>

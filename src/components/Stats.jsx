@@ -62,7 +62,7 @@ const Stats = (props) => {
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-chart-bar"></i>&nbsp;
+          <i className="fas fa-chart-bar"></i>&nbsp;&nbsp;
           {props.lang === "en" ? "Personal" : "أحصائيات"}
         </h1>
         <h1 style={{ color: props.myPrimaryColor }}>

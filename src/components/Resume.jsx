@@ -76,7 +76,8 @@ const Resume = ({
         className="d-flex justify-content-center"
       >
         <h1>
-          <i className="fas fa-file"></i> {lang === "en" ? "My" : "السيرة"}
+          <i className="fas fa-file"></i>&nbsp;&nbsp;
+          {lang === "en" ? "My" : "السيرة"}
         </h1>
         <h1 style={{ color: myPrimaryColor }}>
           &nbsp;{lang === "en" ? "Resume" : "الذاتية"}

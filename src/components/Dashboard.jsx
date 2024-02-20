@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-simple-typewriter";
 import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 import { Tilt } from "react-tilt";
@@ -15,7 +15,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
   return (
     <div className="mb-3" style={{ display: "flex" }}>
       <h4 style={{ fontSize: fontSize === "lg" ? "25px" : "16px" }}>
-        {lang === "en" ? "and I'm a" : "وأنا"}&nbsp;
+        {lang === "en" ? "and I'm a " : "وأنا "}&nbsp;
       </h4>
       <h4
         id="typewriter"
@@ -23,35 +23,21 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
           fontSize: fontSize === "lg" ? "25px" : "16px",
           color: myPrimaryColor,
           fontWeight: "bold",
-          letterSpacing: lang === "en" ? "2px" : "0px",
+          letterSpacing: lang === "ar" ? "0px" : "4px",
         }}
       >
         <Typewriter
-          options={{
-            loop: true,
-            delay: 75,
-            autoStart: true,
-          }}
-          onInit={(typewriter) => {
-            typewriter
-              .pauseFor(200)
-              .changeDelay(40)
-              .changeDeleteSpeed(3)
-              .typeString(
-                lang === "en" ? "Fullstack Developer" : "مطور ويب متكامل"
-              )
-              .pauseFor(1000)
-              .deleteChars(20)
-              .pauseFor(100)
-              .typeString(lang === "en" ? "Frontend Developer" : "مطور واجهات")
-              .pauseFor(1000)
-              .deleteChars(18)
-              .pauseFor(100)
-              .typeString(lang === "en" ? "Backend Developer" : "مطور خلفية")
-              .pauseFor(1000)
-              .deleteChars(18)
-              .start();
-          }}
+          words={[
+            lang === "en" ? "Fullstack Developer" : "مـطــور ويــب مـتـكــامـل",
+            lang === "en" ? "Frontend Developer" : "مـطــور واجـهــات",
+            lang === "en" ? "Backend Developer" : "مـطــور خـلـفـيــة",
+          ]}
+          loop={false}
+          cursor
+          cursorStyle="|"
+          typeSpeed={60}
+          deleteSpeed={30}
+          delaySpeed={1000}
         />
       </h4>
     </div>
@@ -59,7 +45,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
 };
 
 const Account = ({ name, icon, link, lang }) => (
-  <div className={lang==="en"? "circle-left" : "circle-right"}>
+  <div className={lang === "en" ? "circle-left" : "circle-right"}>
     <Button
       variant="dark"
       className={name}
@@ -139,7 +125,7 @@ const AboutMeSection = ({ myPrimaryColor, fontSize, accounts, lang }) => {
           }
         }}
       >
-        {lang === "en" ? "About Me" : "عــنـــــــي"}
+        {lang === "en" ? "About Me" : "عـنـــــي"}&nbsp;&nbsp;
         <i
           className={
             lang === "en"
