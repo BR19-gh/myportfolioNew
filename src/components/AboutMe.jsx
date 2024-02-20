@@ -189,7 +189,7 @@ const AboutMe = ({
             }}
           >
             {lang === "en" ? "Resume" : "السيرة"}
-            &nbsp;&nbsp;
+            &nbsp;
             <i className="far fa-file"></i>
           </Button>
           <a style={{ margin: "5px" }}></a>
@@ -210,7 +210,7 @@ const AboutMe = ({
             }}
           >
             {lang === "en" ? "Projects" : "المشاريع"}
-            &nbsp;&nbsp;
+            &nbsp;
             <i className="fas fa-laptop-code"></i>
           </Button>
         </div>
