@@ -98,7 +98,7 @@ const AboutMeSection = ({ myPrimaryColor, fontSize, accounts, lang }) => {
         {lang === "en" ? "Hello, World!" : "مرحبا بالعالم!"}
       </h1>
       <h1
-        style={{ fontSize: fontSize === "lg" ? "35px" : "25px" }}
+        style={{ fontSize: fontSize === "lg" ? "35px" : "23px" }}
         className="mb-3"
       >
         {lang === "en" ? "I'm Ibrahim Alkhowaiter" : "أنا ابراهيم الخويطر"}
