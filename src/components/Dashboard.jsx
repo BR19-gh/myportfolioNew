@@ -20,7 +20,7 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
       <h4
         id="typewriter"
         style={{
-          fontSize: fontSize === "lg" ? "25px" : "20px",
+          fontSize: fontSize === "lg" ? "25px" : "18px",
           color: myPrimaryColor,
           fontWeight: "bold",
           letterSpacing: lang === "ar" ? "0px" : "4px",
@@ -98,7 +98,7 @@ const AboutMeSection = ({ myPrimaryColor, fontSize, accounts, lang }) => {
         {lang === "en" ? "Hello, World!" : "مرحبا بالعالم!"}
       </h1>
       <h1
-        style={{ fontSize: fontSize === "lg" ? "35px" : "23px" }}
+        style={{ fontSize: fontSize === "lg" ? "35px" : "25px" }}
         className="mb-3"
       >
         {lang === "en" ? "I'm Ibrahim Alkhowaiter" : "أنا ابراهيم الخويطر"}
