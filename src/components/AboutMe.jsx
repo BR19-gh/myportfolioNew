@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 // import { Tilt } from "react-tilt";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const AboutMe = ({
   myPrimaryColor,
@@ -48,29 +49,20 @@ const AboutMe = ({
         setExpanded(false);
       }}
       id="aboutme-component"
-      className="text-center showPage"
+      className="d-flex flex-wrap justify-content-center showPage"
     >
-      <div
-        style={{
-          marginTop:
-            flexDir === "column"
-              ? fontSize === "sm"
-                ? "70px"
-                : "-60px"
-              : "-90px",
-          marginBottom: flexDir === "column" ? "30px" : "80px",
+      <Header
+        icon={<i className="fas fa-user"></i>}
+        text={{
+          en: ["About", "Me"],
+          ar: ["عنــ", "ـــــي"],
+          space: false,
         }}
-        className="d-flex justify-content-center"
-      >
-        <h1>
-          <i className="fas fa-user"></i>&nbsp;&nbsp;
-          {lang === "en" ? "About" : "عنـــــ"}
-        </h1>
-        <h1 style={{ color: myPrimaryColor }}>
-          {lang === "en" ? <a>&nbsp;</a> : null}
-          {lang === "en" ? "Me" : "ــي"}
-        </h1>
-      </div>
+        flexDir={flexDir}
+        fontSize={fontSize}
+        lang={lang}
+        myPrimaryColor={myPrimaryColor}
+      />
 
       <Container
         className={

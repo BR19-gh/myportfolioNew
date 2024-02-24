@@ -9,6 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 import ResumePDF from "../../public/Ibrahim_Alkhowaiter_Resume.pdf";
 import { Tilt } from "react-tilt";
 import Button from "react-bootstrap/Button";
+import Header from "./Header";
 
 const defaultOptions = {
   reverse: false, // reverse the tilt direction
@@ -61,28 +62,19 @@ const Resume = ({
       }}
       className="d-flex flex-wrap justify-content-center showPage"
     >
-      <div
-        style={{
-          width: "100%",
-
-          marginTop:
-            flexDir === "column"
-              ? fontSize === "sm"
-                ? "20px"
-                : "-60px"
-              : "-90px",
-          marginBottom: "30px",
+      <Header
+        icon={<i className="fas fa-file"></i>}
+        text={{
+          en: ["My", "Resume"],
+          ar: ["السيرة", "الذاتية"],
+          space: true,
         }}
-        className="d-flex justify-content-center"
-      >
-        <h1>
-          <i className="fas fa-file"></i>&nbsp;&nbsp;
-          {lang === "en" ? "My" : "السيرة"}
-        </h1>
-        <h1 style={{ color: myPrimaryColor }}>
-          &nbsp;{lang === "en" ? "Resume" : "الذاتية"}
-        </h1>
-      </div>
+        flexDir={flexDir}
+        fontSize={fontSize}
+        lang={lang}
+        myPrimaryColor={myPrimaryColor}
+      />
+
       <Container
         className="d-flex justify-content-center"
         style={{ width: "100%" }}
