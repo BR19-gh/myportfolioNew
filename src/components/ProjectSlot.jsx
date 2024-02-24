@@ -36,7 +36,7 @@ const ProjectSlot = (props) => {
       >
         <Card.Img
           style={{
-            height: props.flexDir === "row" ? "104px" : "113px",
+            height: props.fontSize === "sm" ? "104px" : "113px",
           }}
           variant="top"
           src={props.projects[props.id].githubImg}
