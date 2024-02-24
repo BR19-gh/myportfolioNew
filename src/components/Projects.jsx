@@ -45,7 +45,7 @@ const Projects = (props) => {
       />
 
       {Object.keys(props.projects).map((id) => (
-        <ProjectSlot id={id} projects={props.projects} key={id} />
+        <ProjectSlot lang={props.lang} id={id} projects={props.projects} key={id} />
       ))}
     </Container>
   );
