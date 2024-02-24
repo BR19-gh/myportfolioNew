@@ -24,7 +24,7 @@ const ProjectSlot = (props) => {
       options={defaultOptions}
       style={{
         width: "19rem",
-        margin: props.fontSize === "sm" ? "0px" : "20px",
+        margin: "7px",
         marginBottom: "20px",
       }}
     >
@@ -36,7 +36,7 @@ const ProjectSlot = (props) => {
       >
         <Card.Img
           style={{
-            height: props.fontSize === "sm" ? "104px" : "113px",
+            height: "113px",
           }}
           variant="top"
           src={props.projects[props.id].githubImg}
