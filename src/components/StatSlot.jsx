@@ -20,7 +20,7 @@ const StatSlot = (props) => {
       className="showPage"
       options={defaultOptions}
       style={{
-        width: "19rem",
+        width: "19.5rem",
         borderRadius: "40%",
       }}
     >
