@@ -83,6 +83,7 @@ const App = (props) => {
       {loading ? null : (
         <>
           <Nav
+            setLoading={setLoading}
             expanded={expanded}
             setExpanded={setExpanded}
             setLang={setLang}
