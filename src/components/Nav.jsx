@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import icon from "../../public/icon.png";
 
-const Navigation = ({ expanded, setExpanded, setLang, lang, setLoading }) => {
+const Navigation = ({ expanded, setExpanded, setLang, lang }) => {
   const navigate = useNavigate();
   const isActive = (path) => window.location.pathname === path;
 
@@ -32,8 +32,7 @@ const Navigation = ({ expanded, setExpanded, setLang, lang, setLoading }) => {
         }}
         onClick={() => {
           if (lang === "ar") navigate("/ar");
-          else navigate("/");
-          setLoading(true);
+          else navigate("/en");
         }}
       >
         <Image src={icon} style={{ height: "40px" }} />

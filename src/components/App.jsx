@@ -93,7 +93,7 @@ const App = (props) => {
           <div className="content-container">
             <Routes>
               <Route
-                path={lang === "ar" ? "/ar" : "/"}
+                path={lang === "ar" ? "/ar" : ["/", "/en"]}
                 exact
                 element={
                   <Dashboard
@@ -107,7 +107,9 @@ const App = (props) => {
                 }
               />
               <Route
-                path={lang === "ar" ? "/projects/ar" : "/projects"}
+                path={
+                  lang === "ar" ? "/projects/ar" : ["/projects", "/projects/en"]
+                }
                 element={
                   <Projects
                     lang={lang}
@@ -121,7 +123,9 @@ const App = (props) => {
               />
 
               <Route
-                path={lang === "ar" ? "/aboutme/ar" : "/aboutme"}
+                path={
+                  lang === "ar" ? "/aboutme/ar" : ["/aboutme", "/aboutme/en"]
+                }
                 element={
                   <AboutMe
                     lang={lang}
@@ -134,7 +138,7 @@ const App = (props) => {
                 }
               />
               <Route
-                path={lang === "ar" ? "/stats/ar" : "/stats"}
+                path={lang === "ar" ? "/stats/ar" : ["/stats", "/stats/en"]}
                 element={
                   <Stats
                     lang={lang}
@@ -147,7 +151,7 @@ const App = (props) => {
                 }
               />
               <Route
-                path={lang === "ar" ? "/resume/ar" : "/resume"}
+                path={lang === "ar" ? "/resume/ar" : ["/resume", "/resume/en"]}
                 element={
                   <Resume
                     lang={lang}
