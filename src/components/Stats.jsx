@@ -69,8 +69,8 @@ const Stats = (props) => {
           title="Streak"
           src={
             props.lang === "ar"
-              ? "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin_mocha&locale=ar"
-              : "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin_mocha"
+              ? "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin-macchiato&locale=ar&hide_longest_streak=true"
+              : "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin-macchiato&hide_longest_streak=true"
           }
         />
         
