@@ -4,15 +4,9 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import StatSlot from "./StatSlot";
 import Header from "./Header";
-import ClipLoader from "react-spinners/ClipLoader";
-
-const override = {
-  display: "block",
-  margin: "0 auto",
-};
 
 const Stats = (props) => {
-  const [loadingStats, setLoadingStats] = useState(true);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,15 +25,9 @@ const Stats = (props) => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
-    setTimeout(() => {
-      setLoadingStats(!loadingStats);
-    }, 500);
+    
     return () => {
       window.removeEventListener("resize", handleResize);
-
-      setTimeout(() => {
-        setLoadingStats(!loadingStats);
-      }, 500);
     };
   }, []);
   return (
