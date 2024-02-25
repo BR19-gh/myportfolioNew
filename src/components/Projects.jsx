@@ -47,14 +47,7 @@ const Projects = (props) => {
         lang={props.lang}
         myPrimaryColor={props.myPrimaryColor}
       />
-      <ClipLoader
-        color={props.myPrimaryColor}
-        loading={loadingProjects}
-        size={150}
-        cssOverride={override}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
+   
     Object.keys(props.projects).map((id) => (
             <ProjectSlot
               lang={props.lang}
