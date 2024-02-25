@@ -86,7 +86,12 @@ const Resume = ({
             width: "19rem",
           }}
         >
-          <Document file={ResumePDF}>
+          <Document
+            loading={
+              lang === "ar" ? "جار تحميل السيرة..." : "Loading resume..."
+            }
+            file={ResumePDF}
+          >
             <Page pageNumber={1} />
           </Document>
         </Tilt>

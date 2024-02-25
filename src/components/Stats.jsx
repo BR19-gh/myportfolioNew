@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
 import Container from "react-bootstrap/Container";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import StatSlot from "./StatSlot";
 import Header from "./Header";
 
 const Stats = (props) => {
-
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1200) {
@@ -25,7 +23,7 @@ const Stats = (props) => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -51,24 +49,22 @@ const Stats = (props) => {
       />
 
       <Container className="d-flex flex-wrap flex-column align-content-center">
-    
-            <StatSlot
-              title="Top Languages"
-              src={
-                props.lang === "ar"
-                  ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar"
-                  : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
-              }
-            />
-            <StatSlot
-              title="Stats"
-              src={
-                props.lang === "ar"
-                  ? "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github&locale=ar"
-                  : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
-              }
-            />
-          
+        <StatSlot
+          title="Top Languages"
+          src={
+            props.lang === "ar"
+              ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar"
+              : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
+          }
+        />
+        <StatSlot
+          title="Stats"
+          src={
+            props.lang === "ar"
+              ? "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github&locale=ar"
+              : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
+          }
+        />
       </Container>
     </Container>
   );

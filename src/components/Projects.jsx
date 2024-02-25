@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
 import { connect } from "react-redux";
 import Container from "react-bootstrap/Container";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ProjectSlot from "./ProjectSlot";
 import Header from "./Header";
 
-
 const Projects = (props) => {
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1200) {
@@ -26,10 +24,6 @@ const Projects = (props) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-
-      setTimeout(() => {
-        setLoadingProjects(!loadingProjects);
-      }, 500);
     };
   }, []);
   return (
@@ -47,15 +41,15 @@ const Projects = (props) => {
         lang={props.lang}
         myPrimaryColor={props.myPrimaryColor}
       />
-   
-    Object.keys(props.projects).map((id) => (
-            <ProjectSlot
-              lang={props.lang}
-              id={id}
-              projects={props.projects}
-              key={id}
-            />
-          ))
+
+      {Object.keys(props.projects).map((id) => (
+        <ProjectSlot
+          lang={props.lang}
+          id={id}
+          projects={props.projects}
+          key={id}
+        />
+      ))}
     </Container>
   );
 };
