@@ -92,77 +92,87 @@ const App = (props) => {
 
           <div className="content-container">
             <Routes>
-              <Route
-                path={lang === "ar" ? "/ar" : ["/", "/en"]}
-                exact
-                element={
-                  <Dashboard
-                    lang={lang}
-                    setExpanded={setExpanded}
-                    flexDir={flexDir}
-                    setFontSize={setFontSize}
-                    fontSize={fontSize}
-                    setFlexDir={setFlexDir}
-                  />
-                }
-              />
-              <Route
-                path={
-                  lang === "ar" ? "/projects/ar" : ["/projects", "/projects/en"]
-                }
-                element={
-                  <Projects
-                    lang={lang}
-                    setExpanded={setExpanded}
-                    flexDir={flexDir}
-                    setFontSize={setFontSize}
-                    fontSize={fontSize}
-                    setFlexDir={setFlexDir}
-                  />
-                }
-              />
-
-              <Route
-                path={
-                  lang === "ar" ? "/aboutme/ar" : ["/aboutme", "/aboutme/en"]
-                }
-                element={
-                  <AboutMe
-                    lang={lang}
-                    setExpanded={setExpanded}
-                    flexDir={flexDir}
-                    setFontSize={setFontSize}
-                    fontSize={fontSize}
-                    setFlexDir={setFlexDir}
-                  />
-                }
-              />
-              <Route
-                path={lang === "ar" ? "/stats/ar" : ["/stats", "/stats/en"]}
-                element={
-                  <Stats
-                    lang={lang}
-                    setExpanded={setExpanded}
-                    flexDir={flexDir}
-                    setFontSize={setFontSize}
-                    fontSize={fontSize}
-                    setFlexDir={setFlexDir}
-                  />
-                }
-              />
-              <Route
-                path={lang === "ar" ? "/resume/ar" : ["/resume", "/resume/en"]}
-                element={
-                  <Resume
-                    lang={lang}
-                    setExpanded={setExpanded}
-                    flexDir={flexDir}
-                    setFontSize={setFontSize}
-                    fontSize={fontSize}
-                    setFlexDir={setFlexDir}
-                  />
-                }
-              />
+              {["", "/ar", "/en", "/home/en", "/home/ar"].map((path) => (
+                <Route
+                  key={path}
+                  path={path}
+                  exact
+                  element={
+                    <Dashboard
+                      lang={lang}
+                      setExpanded={setExpanded}
+                      flexDir={flexDir}
+                      setFontSize={setFontSize}
+                      fontSize={fontSize}
+                      setFlexDir={setFlexDir}
+                    />
+                  }
+                />
+              ))}
+              {["/projects/ar", "/projects/en", "/project"].map((path) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={
+                    <Projects
+                      lang={lang}
+                      setExpanded={setExpanded}
+                      flexDir={flexDir}
+                      setFontSize={setFontSize}
+                      fontSize={fontSize}
+                      setFlexDir={setFlexDir}
+                    />
+                  }
+                />
+              ))}
+              {["/aboutme/ar", "/aboutme/en", "/aboutme"].map((path) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={
+                    <AboutMe
+                      lang={lang}
+                      setExpanded={setExpanded}
+                      flexDir={flexDir}
+                      setFontSize={setFontSize}
+                      fontSize={fontSize}
+                      setFlexDir={setFlexDir}
+                    />
+                  }
+                />
+              ))}
+              {["/stats/ar", "/stats/en", "/stats"].map((path) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={
+                    <Stats
+                      lang={lang}
+                      setExpanded={setExpanded}
+                      flexDir={flexDir}
+                      setFontSize={setFontSize}
+                      fontSize={fontSize}
+                      setFlexDir={setFlexDir}
+                    />
+                  }
+                />
+              ))}
+              {["/resume/ar", "/resume/en", "/resume"].map((path) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={
+                    <Resume
+                      lang={lang}
+                      setExpanded={setExpanded}
+                      flexDir={flexDir}
+                      setFontSize={setFontSize}
+                      fontSize={fontSize}
+                      setFlexDir={setFlexDir}
+                    />
+                  }
+                />
+              ))}
               <Route
                 path="*"
                 element={
