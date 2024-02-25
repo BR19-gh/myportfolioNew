@@ -31,6 +31,7 @@ const Navigation = ({ expanded, setExpanded, setLang, lang, setLoading }) => {
           marginRight: lang === "en" ? "10px" : "0px",
         }}
         onClick={() => {
+          setLoading(true);
           if (lang === "ar") navigate("/ar");
           else navigate("/");
           setLoading(true);
