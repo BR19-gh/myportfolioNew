@@ -30,9 +30,9 @@ const NotFound = ({
     handleResize();
 
     window.addEventListener("resize", handleResize);
-
+    setLoading(true);
     setTimeout(() => {
-      setLoading(true);
+      setLoading(false);
     }, 500);
 
     return () => {
