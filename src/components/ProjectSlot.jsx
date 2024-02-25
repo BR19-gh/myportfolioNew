@@ -29,7 +29,7 @@ const ProjectSlot = (props) => {
       }}
     >
       <Card
-        className="text-center"
+        className="text-center showPage"
         style={{
           width: "100%",
         }}

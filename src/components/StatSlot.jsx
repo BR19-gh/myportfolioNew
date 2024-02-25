@@ -17,6 +17,7 @@ const defaultOptions = {
 const StatSlot = (props) => {
   return (
     <Tilt
+      className="showPage"
       options={defaultOptions}
       style={{
         width: "19rem",
