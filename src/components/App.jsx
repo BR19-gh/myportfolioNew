@@ -92,23 +92,25 @@ const App = (props) => {
 
           <div className="content-container">
             <Routes>
-              {["", "/ar", "/en", "/home/en", "/home/ar"].map((path) => (
-                <Route
-                  key={path}
-                  path={path}
-                  exact
-                  element={
-                    <Dashboard
-                      lang={lang}
-                      setExpanded={setExpanded}
-                      flexDir={flexDir}
-                      setFontSize={setFontSize}
-                      fontSize={fontSize}
-                      setFlexDir={setFlexDir}
-                    />
-                  }
-                />
-              ))}
+              {["", "/ar", "/en", "home", "/home/en", "/home/ar"].map(
+                (path) => (
+                  <Route
+                    key={path}
+                    path={path}
+                    exact
+                    element={
+                      <Dashboard
+                        lang={lang}
+                        setExpanded={setExpanded}
+                        flexDir={flexDir}
+                        setFontSize={setFontSize}
+                        fontSize={fontSize}
+                        setFlexDir={setFlexDir}
+                      />
+                    }
+                  />
+                )
+              )}
               {["/projects/ar", "/projects/en", "/projects"].map((path) => (
                 <Route
                   key={path}
