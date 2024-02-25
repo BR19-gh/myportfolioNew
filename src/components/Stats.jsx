@@ -51,16 +51,7 @@ const Stats = (props) => {
       />
 
       <Container className="d-flex flex-wrap flex-column align-content-center">
-        <ClipLoader
-          color={props.myPrimaryColor}
-          loading={loadingStats}
-          size={150}
-          cssOverride={override}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-        {loadingStats ? null : (
-          <>
+    
             <StatSlot
               title="Top Languages"
               src={
@@ -77,8 +68,7 @@ const Stats = (props) => {
                   : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
               }
             />
-          </>
-        )}
+          
       </Container>
     </Container>
   );
