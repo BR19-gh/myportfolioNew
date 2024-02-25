@@ -55,16 +55,14 @@ const Projects = (props) => {
         aria-label="Loading Spinner"
         data-testid="loader"
       />
-      {loadingProjects
-        ? null
-        : Object.keys(props.projects).map((id) => (
+    Object.keys(props.projects).map((id) => (
             <ProjectSlot
               lang={props.lang}
               id={id}
               projects={props.projects}
               key={id}
             />
-          ))}
+          ))
     </Container>
   );
 };
