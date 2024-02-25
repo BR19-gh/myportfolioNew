@@ -4,12 +4,7 @@ import Container from "react-bootstrap/Container";
 import { useEffect, useState } from "react";
 import ProjectSlot from "./ProjectSlot";
 import Header from "./Header";
-import ClipLoader from "react-spinners/ClipLoader";
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-};
 
 const Projects = (props) => {
   const [loadingProjects, setLoadingProjects] = useState(true);
@@ -30,9 +25,6 @@ const Projects = (props) => {
 
     handleResize();
 
-    setTimeout(() => {
-      setLoadingProjects(!loadingProjects);
-    }, 500);
     return () => {
       window.removeEventListener("resize", handleResize);
 
