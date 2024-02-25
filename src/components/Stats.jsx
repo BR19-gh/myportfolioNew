@@ -53,8 +53,8 @@ const Stats = (props) => {
           title="Top Languages"
           src={
             props.lang === "ar"
-              ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar"
-              : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
+              ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=5&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar&hide=html,css"
+              : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=5&username=BR19-gh&theme=catppuccin_mocha&layout=donut&hide=html,css"
           }
         />
         <StatSlot
