@@ -163,6 +163,7 @@ const App = (props) => {
                 path="*"
                 element={
                   <NotFound
+                    setLoading={setLoading}
                     setExpanded={setExpanded}
                     flexDir={flexDir}
                     setFontSize={setFontSize}

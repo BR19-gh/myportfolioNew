@@ -11,6 +11,7 @@ const NotFound = ({
   setFontSize,
   fontSize,
   setExpanded,
+  setLoading,
 }) => {
   useEffect(() => {
     const handleResize = () => {
@@ -29,6 +30,10 @@ const NotFound = ({
     handleResize();
 
     window.addEventListener("resize", handleResize);
+
+    setTimeout(() => {
+      setLoading(true);
+    }, 500);
 
     return () => {
       window.removeEventListener("resize", handleResize);
