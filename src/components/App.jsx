@@ -109,7 +109,7 @@ const App = (props) => {
                   }
                 />
               ))}
-              {["/projects/ar", "/projects/en", "/project"].map((path) => (
+              {["/projects/ar", "/projects/en", "/projects"].map((path) => (
                 <Route
                   key={path}
                   path={path}
