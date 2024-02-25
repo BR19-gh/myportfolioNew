@@ -7,7 +7,6 @@ import Header from "./Header";
 
 
 const Projects = (props) => {
-  const [loadingProjects, setLoadingProjects] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
