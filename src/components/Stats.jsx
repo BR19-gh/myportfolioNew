@@ -1,11 +1,19 @@
 /* eslint-disable react/prop-types */
 import Container from "react-bootstrap/Container";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import StatSlot from "./StatSlot";
 import Header from "./Header";
+import ClipLoader from "react-spinners/ClipLoader";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
 
 const Stats = (props) => {
+  const [loadingStats, setLoadingStats] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1200) {
@@ -23,9 +31,15 @@ const Stats = (props) => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
-
+    setTimeout(() => {
+      setLoadingStats(!loadingStats);
+    }, 500);
     return () => {
       window.removeEventListener("resize", handleResize);
+
+      setTimeout(() => {
+        setLoadingStats(!loadingStats);
+      }, 500);
     };
   }, []);
   return (
@@ -49,22 +63,34 @@ const Stats = (props) => {
       />
 
       <Container className="d-flex flex-wrap flex-column align-content-center">
-        <StatSlot
-          title="Top Languages"
-          src={
-            props.lang === "ar"
-              ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar"
-              : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
-          }
+        <ClipLoader
+          color={props.myPrimaryColor}
+          loading={loadingStats}
+          size={150}
+          cssOverride={override}
+          aria-label="Loading Spinner"
+          data-testid="loader"
         />
-        <StatSlot
-          title="Stats"
-          src={
-            props.lang === "ar"
-              ? "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github&locale=ar"
-              : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
-          }
-        />
+        {loadingStats ? null : (
+          <>
+            <StatSlot
+              title="Top Languages"
+              src={
+                props.lang === "ar"
+                  ? "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut&locale=ar"
+                  : "https://github-readme-stats.vercel.app/api/top-langs/?langs_count=10&username=BR19-gh&theme=catppuccin_mocha&layout=donut"
+              }
+            />
+            <StatSlot
+              title="Stats"
+              src={
+                props.lang === "ar"
+                  ? "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github&locale=ar"
+                  : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
+              }
+            />
+          </>
+        )}
       </Container>
     </Container>
   );

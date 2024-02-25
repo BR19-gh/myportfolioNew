@@ -192,8 +192,6 @@ const Dashboard = ({
   accounts,
   lang,
 }) => {
-  // const [pageLoaded, setPageLoaded] = useState(false);
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1180) {
@@ -208,18 +206,12 @@ const Dashboard = ({
       }
     };
 
-    // const handlePageLoad = () => {
-    //   setPageLoaded(true);
-    // };
-
     handleResize();
 
     window.addEventListener("resize", handleResize);
-    // window.addEventListener("load", handlePageLoad);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      //  window.removeEventListener("load", handlePageLoad);
     };
   }, []);
 

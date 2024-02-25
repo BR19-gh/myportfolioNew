@@ -12,126 +12,173 @@ import LoadingBar from "react-redux-loading-bar";
 import AboutMe from "./AboutMe";
 import Stats from "./Stats";
 import Resume from "./Resume";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const App = (props) => {
   const [flexDir, setFlexDir] = useState("row");
   const [fontSize, setFontSize] = useState("lg");
   const [expanded, setExpanded] = useState(false);
   const [lang, setLang] = useState("en");
+  let [loading, setLoading] = useState(true);
+
   const langPath = `${
     window.location.pathname[window.location.pathname.length - 2]
   }${window.location.pathname[window.location.pathname.length - 1]}`;
 
   useEffect(() => {
+    props.dispatch(handleInitialData());
+
+    const handleResize = () => {
+      if (window.innerWidth < 1180) {
+        setFlexDir("column");
+      } else {
+        setFlexDir("row");
+      }
+      if (window.innerWidth < 768) {
+        setFontSize("sm");
+      } else {
+        setFontSize("lg");
+      }
+    };
+
     if (langPath === "ar") {
       setLang("ar");
     } else {
       setLang("en");
     }
-    props.dispatch(handleInitialData());
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    setTimeout(() => {
+      window.addEventListener("load", setLoading(!loading));
+    }, 500);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+
+      setTimeout(() => {
+        window.addEventListener("load", setLoading(!loading));
+      }, 500);
+    };
   }, []);
+
+  const override = {
+    display: "block",
+    margin: "auto",
+    marginTop: "250px",
+  };
 
   return (
     <Container>
-      <LoadingBar style={{ backgroundColor: props.myPrimaryColor }} />
-      <Nav
-        expanded={expanded}
-        setExpanded={setExpanded}
-        setLang={setLang}
-        lang={lang}
+      <ClipLoader
+        color={props.myPrimaryColor}
+        loading={loading}
+        size={150}
+        cssOverride={override}
+        aria-label="Loading Spinner"
+        data-testid="loader"
       />
+      <LoadingBar style={{ backgroundColor: props.myPrimaryColor }} />
+      {loading ? null : (
+        <>
+          <Nav
+            expanded={expanded}
+            setExpanded={setExpanded}
+            setLang={setLang}
+            lang={lang}
+          />
 
-      <div className="content-container">
-        {props.loading === true ? null : (
-          <Routes>
-            <Route
-              path={lang === "ar" ? "/ar" : "/"}
-              exact
-              element={
-                <Dashboard
-                  lang={lang}
-                  setExpanded={setExpanded}
-                  flexDir={flexDir}
-                  setFontSize={setFontSize}
-                  fontSize={fontSize}
-                  setFlexDir={setFlexDir}
-                />
-              }
-            />
-            <Route
-              path={lang === "ar" ? "/projects/ar" : "/projects"}
-              element={
-                <Projects
-                  lang={lang}
-                  setExpanded={setExpanded}
-                  flexDir={flexDir}
-                  setFontSize={setFontSize}
-                  fontSize={fontSize}
-                  setFlexDir={setFlexDir}
-                />
-              }
-            />
+          <div className="content-container">
+            <Routes>
+              <Route
+                path={lang === "ar" ? "/ar" : "/"}
+                exact
+                element={
+                  <Dashboard
+                    lang={lang}
+                    setExpanded={setExpanded}
+                    flexDir={flexDir}
+                    setFontSize={setFontSize}
+                    fontSize={fontSize}
+                    setFlexDir={setFlexDir}
+                  />
+                }
+              />
+              <Route
+                path={lang === "ar" ? "/projects/ar" : "/projects"}
+                element={
+                  <Projects
+                    lang={lang}
+                    setExpanded={setExpanded}
+                    flexDir={flexDir}
+                    setFontSize={setFontSize}
+                    fontSize={fontSize}
+                    setFlexDir={setFlexDir}
+                  />
+                }
+              />
 
-            <Route
-              path={lang === "ar" ? "/aboutme/ar" : "/aboutme"}
-              element={
-                <AboutMe
-                  lang={lang}
-                  setExpanded={setExpanded}
-                  flexDir={flexDir}
-                  setFontSize={setFontSize}
-                  fontSize={fontSize}
-                  setFlexDir={setFlexDir}
-                />
-              }
-            />
-            <Route
-              path={lang === "ar" ? "/stats/ar" : "/stats"}
-              element={
-                <Stats
-                  lang={lang}
-                  setExpanded={setExpanded}
-                  flexDir={flexDir}
-                  setFontSize={setFontSize}
-                  fontSize={fontSize}
-                  setFlexDir={setFlexDir}
-                />
-              }
-            />
-            <Route
-              path={lang === "ar" ? "/resume/ar" : "/resume"}
-              element={
-                <Resume
-                  lang={lang}
-                  setExpanded={setExpanded}
-                  flexDir={flexDir}
-                  setFontSize={setFontSize}
-                  fontSize={fontSize}
-                  setFlexDir={setFlexDir}
-                />
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <NotFound
-                  setExpanded={setExpanded}
-                  flexDir={flexDir}
-                  setFontSize={setFontSize}
-                  fontSize={fontSize}
-                  setFlexDir={setFlexDir}
-                />
-              }
-            />
-          </Routes>
-        )}
-      </div>
+              <Route
+                path={lang === "ar" ? "/aboutme/ar" : "/aboutme"}
+                element={
+                  <AboutMe
+                    lang={lang}
+                    setExpanded={setExpanded}
+                    flexDir={flexDir}
+                    setFontSize={setFontSize}
+                    fontSize={fontSize}
+                    setFlexDir={setFlexDir}
+                  />
+                }
+              />
+              <Route
+                path={lang === "ar" ? "/stats/ar" : "/stats"}
+                element={
+                  <Stats
+                    lang={lang}
+                    setExpanded={setExpanded}
+                    flexDir={flexDir}
+                    setFontSize={setFontSize}
+                    fontSize={fontSize}
+                    setFlexDir={setFlexDir}
+                  />
+                }
+              />
+              <Route
+                path={lang === "ar" ? "/resume/ar" : "/resume"}
+                element={
+                  <Resume
+                    lang={lang}
+                    setExpanded={setExpanded}
+                    flexDir={flexDir}
+                    setFontSize={setFontSize}
+                    fontSize={fontSize}
+                    setFlexDir={setFlexDir}
+                  />
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <NotFound
+                    setExpanded={setExpanded}
+                    flexDir={flexDir}
+                    setFontSize={setFontSize}
+                    fontSize={fontSize}
+                    setFlexDir={setFlexDir}
+                  />
+                }
+              />
+            </Routes>
+          </div>
+        </>
+      )}
     </Container>
   );
 };
 
-const mapStateToProps = ({ authedUser, myPrimaryColor }) => ({
-  loading: authedUser === null,
+const mapStateToProps = ({ myPrimaryColor }) => ({
   myPrimaryColor: myPrimaryColor.color,
 });
 

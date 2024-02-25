@@ -12,6 +12,7 @@ const Navigation = ({ expanded, setExpanded, setLang, lang }) => {
 
   return (
     <Navbar
+      className="showPage"
       expanded={expanded}
       fixed="top"
       expand="lg"

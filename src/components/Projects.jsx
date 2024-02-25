@@ -1,11 +1,19 @@
 /* eslint-disable react/prop-types */
 import { connect } from "react-redux";
 import Container from "react-bootstrap/Container";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProjectSlot from "./ProjectSlot";
 import Header from "./Header";
+import ClipLoader from "react-spinners/ClipLoader";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
 
 const Projects = (props) => {
+  const [loadingProjects, setLoadingProjects] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1200) {
@@ -22,10 +30,15 @@ const Projects = (props) => {
 
     handleResize();
 
-    window.addEventListener("resize", handleResize);
-
+    setTimeout(() => {
+      setLoadingProjects(!loadingProjects);
+    }, 500);
     return () => {
       window.removeEventListener("resize", handleResize);
+
+      setTimeout(() => {
+        setLoadingProjects(!loadingProjects);
+      }, 500);
     };
   }, []);
   return (
@@ -43,10 +56,24 @@ const Projects = (props) => {
         lang={props.lang}
         myPrimaryColor={props.myPrimaryColor}
       />
-
-      {Object.keys(props.projects).map((id) => (
-        <ProjectSlot lang={props.lang} id={id} projects={props.projects} key={id} />
-      ))}
+      <ClipLoader
+        color={props.myPrimaryColor}
+        loading={loadingProjects}
+        size={150}
+        cssOverride={override}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      {loadingProjects
+        ? null
+        : Object.keys(props.projects).map((id) => (
+            <ProjectSlot
+              lang={props.lang}
+              id={id}
+              projects={props.projects}
+              key={id}
+            />
+          ))}
     </Container>
   );
 };
