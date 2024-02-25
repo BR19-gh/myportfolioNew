@@ -65,6 +65,15 @@ const Stats = (props) => {
               : "https://github-readme-stats.vercel.app/api?username=BR19-gh&show_icons=true&theme=catppuccin_mocha&rank_icon=github"
           }
         />
+        <StatSlot
+          title="Streak"
+          src={
+            props.lang === "ar"
+              ? "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin_mocha&locale=ar"
+              : "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin_mocha"
+          }
+        />
+        
       </Container>
     </Container>
   );
