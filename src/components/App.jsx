@@ -92,7 +92,7 @@ const App = (props) => {
 
           <div className="content-container">
             <Routes>
-              {["", "/ar", "/en", "home", "/home/en", "/home/ar"].map(
+              {["", "/ar", "/en", "/home", "/home/en", "/home/ar"].map(
                 (path) => (
                   <Route
                     key={path}
