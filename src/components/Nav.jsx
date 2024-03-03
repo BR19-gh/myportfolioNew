@@ -113,9 +113,13 @@ const Navigation = ({ expanded, setExpanded, setLang, lang, setLoading }) => {
             }}
           >
             {lang === "en" ? (
-              <a id="langEN">Language: 🇬🇧</a>
+              <a>
+                Language: <a id="langEN">🇬🇧</a>
+              </a>
             ) : (
-              <a id="langAR">اللغة: 🇸🇦</a>
+              <a>
+                اللغة: <a id="langAR">🇸🇦</a>
+              </a>
             )}
           </Nav.Link>
         </Nav>
