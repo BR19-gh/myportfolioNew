@@ -73,7 +73,6 @@ const Stats = (props) => {
               : "https://github-readme-streak-stats.herokuapp.com?user=BR19-gh&theme=catppuccin_mocha&hide_longest_streak=true"
           }
         />
-        
       </Container>
     </Container>
   );

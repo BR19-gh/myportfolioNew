@@ -13,6 +13,7 @@
 body {
   background-image: url("../public/backgroundDark.jpg");
 }
+
 .content-container {
   margin-top: 15%;
 }
@@ -52,6 +53,11 @@ body {
 
 #typewriter {
   font-family: "Handjet", sans-serif;
+}
+
+#langEN,
+#langAR {
+  font-family: "Twemoji Country Flags", sans-serif;
 }
 
 #about-me-btn {

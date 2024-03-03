@@ -8,6 +8,9 @@ import middleware from "./middleware";
 import { BrowserRouter as Router } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+
+polyfillCountryFlagEmojis();
 
 const store = createStore(reducer, middleware);
 
