@@ -186,7 +186,7 @@ const AboutMe = ({
           </Button>
           <a style={{ margin: "5px" }}></a>
           <Button
-            id="projects-btn"
+            id="resume-btn"
             variant="dark"
             className="mb-4"
             style={{
