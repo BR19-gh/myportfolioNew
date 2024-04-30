@@ -1,5 +1,5 @@
 const PROJECTS = {
-  "online-store-billing-system": {
+  myTools: {
     id: "1",
     title: "myTools",
     shortDescription:
