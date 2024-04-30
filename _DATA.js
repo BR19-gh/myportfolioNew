@@ -1,6 +1,26 @@
 const PROJECTS = {
   "online-store-billing-system": {
     id: "1",
+    title: "myTools",
+    shortDescription:
+      "App that gathers simple tools for your daily calcuations, you can create your own tools.",
+    shortDescriptionAr:
+      "تطبيق يجمع أدوات بسيطة لحساباتك اليومية، ويمكنك إنشاء ادواتك الخاصة",
+    githubURL: "https://github.com/BR19-gh/myTools",
+    githubImg:
+      "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=myTools&show_icons=true&theme=catppuccin_mocha",
+    skills: [
+      "React Native",
+      "Expo",
+      "iOS Development",
+      "Tailwind",
+      "Javascript",
+      "NPM Packages",
+    ],
+    image: null,
+  },
+  "online-store-billing-system": {
+    id: "2",
     title: "OSBS",
     shortDescription: "Online Store Billing System",
     shortDescriptionAr: "نظام فوترة ومتجر الكتروني",
@@ -21,7 +41,7 @@ const PROJECTS = {
     image: null,
   },
   rsd: {
-    id: "2",
+    id: "3",
     title: "RSD",
     shortDescription: "Record students degrees management system.",
     shortDescriptionAr: "نظام لإدارة درجات الطلاب",
@@ -42,7 +62,7 @@ const PROJECTS = {
     image: null,
   },
   Runman: {
-    id: "3",
+    id: "4",
     title: "Runman",
     shortDescription: "Side-scrolling pixel game.",
     shortDescriptionAr: "لعبة منصات برسوم بكسلية",
@@ -63,7 +83,7 @@ const PROJECTS = {
     image: null,
   },
   "employeePolls-Udacity": {
-    id: "4",
+    id: "5",
     title: "Employee Polls",
     shortDescription: "Participate and create polls.",
     shortDescriptionAr: "مشاركة وإنشاء استطلاعات",
@@ -82,7 +102,7 @@ const PROJECTS = {
     image: null,
   },
   myportfolioNew: {
-    id: "5",
+    id: "6",
     title: "My Portfolio",
     shortDescription: "This portfolio website.",
     shortDescriptionAr: "هذا الموقع الشخصي",
@@ -102,7 +122,7 @@ const PROJECTS = {
     image: null,
   },
   moreInGithub: {
-    id: "6",
+    id: "7",
     title: "Github",
     shortDescription: "More in Github.",
     shortDescriptionAr: "المزيد على Github.",
