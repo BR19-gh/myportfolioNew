@@ -12,6 +12,7 @@ const PROJECTS = {
     skills: [
       "React Native",
       "Expo",
+      "Redux",
       "iOS Development",
       "Tailwind",
       "Javascript",
