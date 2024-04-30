@@ -2,10 +2,8 @@ const PROJECTS = {
   myTools: {
     id: "1",
     title: "myTools",
-    shortDescription:
-      "App that gathers simple tools for your daily calcuations, you can create your own tools.",
-    shortDescriptionAr:
-      "تطبيق يجمع أدوات بسيطة لحساباتك اليومية، ويمكنك إنشاء ادواتك الخاصة",
+    shortDescription: "iOS app that gathers tools for your daily calcuations",
+    shortDescriptionAr: "تطبيق iOS يجمع أدوات بسيطة لحساباتك اليومية",
     githubURL: "https://github.com/BR19-gh/myTools",
     githubImg:
       "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=myTools&show_icons=true&theme=catppuccin_mocha",
