@@ -1,12 +1,12 @@
 const PROJECTS = {
   myTools: {
     id: "1",
-    title: "myTools",
+    title: "QuickCalc",
     shortDescription: "iOS app that gathers tools for your daily calcuations",
     shortDescriptionAr: "تطبيق iOS يجمع أدوات بسيطة لحساباتك اليومية",
-    githubURL: "https://github.com/BR19-gh/myTools",
+    githubURL: "https://github.com/BR19-gh/QuickCalc",
     githubImg:
-      "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=myTools&show_icons=true&theme=catppuccin_mocha",
+      "https://github-readme-stats.vercel.app/api/pin/?username=BR19-gh&repo=QuickCalc&show_icons=true&theme=catppuccin_mocha",
     skills: [
       "React Native",
       "Expo",
