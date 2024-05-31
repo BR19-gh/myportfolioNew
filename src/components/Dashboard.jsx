@@ -30,7 +30,8 @@ const JobTitle = ({ myPrimaryColor, fontSize, lang }) => {
           words={[
             lang === "en" ? "Fullstack Developer" : "مـطــور ويــب مـتـكــامـل",
             lang === "en" ? "Frontend Developer" : "مـطــور واجـهــات",
-            lang === "en" ? "Backend Developer" : "مـطــور خـلـفـيــة",
+            lang === "en" ? "Backend Developer" : "مـطــور خـلـفـيــات",
+            lang === "en" ? "Mobile Developer" : "مـطــور تطــبــيــقات",
           ]}
           loop={false}
           cursor
