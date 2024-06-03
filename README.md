@@ -78,7 +78,7 @@ To test the app using Jest, type:
 
 - My Name is Ibrahim Alkhowaiter 🏷️👤.
 
-- Computer Science Graduate form QU 🎓.
+- FullStack and Mobile Apps Developer 💻🌐.
 
 - FullStack and Software Developer 💻🌐.
 
