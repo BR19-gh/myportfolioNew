@@ -97,7 +97,7 @@ const AboutMe = ({
             <Typewriter
               words={[
                     lang === "en" ? "Fullstack Developer" : "مـطــور ويــب مـتـكــامـل",
-                    lang === "en" ? "Mobile Apps Developer" : "مـطــور تطــبــيــقات جوال",
+                    lang === "en" ? "Mobile Developer" : "مـطــور تطــبــيــقات جوال",
               ]}
               loop={false}
               cursor
