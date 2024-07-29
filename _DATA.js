@@ -154,6 +154,11 @@ const ACCOUNTS = {
     icon: "fab fa-whatsapp",
     link: "https://wa.me/966500885115",
   },
+  buymecoffee: {
+    name: "buymecoffee",
+    icon: "fas fa-mug-hot",
+    link: "https://buymeacoffee.com/br19",
+  },
 };
 
 export function _getProjects() {
