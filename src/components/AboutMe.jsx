@@ -116,7 +116,7 @@ const AboutMe = ({
           >
             {lang === "en"
               ? `I have a Bachelor's degree in Computer Science from QU, and I have a
-            strong background in Fullstack Web Development. Throughout my
+            strong background in Fullstack Web Development and Mobile Development. Throughout my
             academic journey, I have obtained various certificates and completed
             relevant courses to enhance my skills and stay up to date with the
             latest industry trends. I am eager to learn new technologies, to
@@ -124,7 +124,7 @@ const AboutMe = ({
             meaningful impact in the world of software development.`
               : ` 
             حاصل على درجة البكالوريوس في علوم
-             الحاسب من جامعة القصيم، لدي خلفية قوية في تطوير الويب. حصلت على عدة شهادات متنوعة
+             الحاسب من جامعة القصيم، لدي خلفية قوية في تطوير الويب وتطوير تطبيقات الجوال. حصلت على عدة شهادات متنوعة
               وأكملت دورات ذات صلة لتعزيز مهاراتي. احرص
               على الاطلاع الدائم في مستجدات مجالي، واحرص على تعلم
               التقنيات الجديد، اطمح للمساهمة بخبرتي في مشاريع مبتكرة،
