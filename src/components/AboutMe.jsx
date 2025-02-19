@@ -85,7 +85,7 @@ const AboutMe = ({
               fontWeight: "bold",
             }}
           >
-            {lang === "en" ? "I'm Ibrahim" : "أنا ابراهيم"}
+            {lang === "en" ? "I'm Ibrahim" : "أنا إبراهيم"}
           </h3>
           <div
             id="typewriter"
