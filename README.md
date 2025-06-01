@@ -1,10 +1,9 @@
-<h1 style="color: red;">Outdated Portfilio</h1>
-# ......
-# My portfolio
+<h1 style="color:red;">Outdated Portfilio</h1>
+
 
 ## Overview
 
-This is my updated Portfolio, created using React, Redux, Bootstrap and several npm packages, you can use its templates for personal purposes only.
+This is my Portfolio, created using React, Redux, Bootstrap and several npm packages, you can use its templates for personal purposes only.
 
 ## Installation
 
